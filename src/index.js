@@ -25,7 +25,7 @@ app.use(helmet());
 app.use(cors({ origin: clientOrigins }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, './_client/build')));
+app.use(express.static(path.join(__dirname, './client/build')));
 
 app.use("/api", apiRouter);
 
