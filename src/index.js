@@ -27,7 +27,7 @@ const apiRouter = express.Router();
       directives: {
         defaultSrc: ["'self'"], 
         scriptSrc: ["'self'"],
-        styleSrc: ["'self'", 'https://fonts.googleapis.com', "'unsafe-inline'"],
+        styleSrc: ["'self'", 'https://fonts.googleapis.com', "https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css", "https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css", "'unsafe-inline'"],
         imgSrc: ["'self'", 'data:'],
         connectSrc: ["'self'", 'https://dpmsandbox.us.auth0.com/oauth/token'],
         fontSrc: ["'self'", 'https://fonts.gstatic.com'],
