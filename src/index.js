@@ -5,7 +5,8 @@
 const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
-const { clientOrigins, serverPORT } = require("./config/env.dev");
+const path = require("path");
+const { clientOrigins } = require("./config/env.dev");
 
 const { messagesRouter } = require("./messages/messages.router");
 
@@ -23,6 +24,8 @@ const apiRouter = express.Router();
 app.use(helmet());
 app.use(cors({ origin: clientOrigins }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, './_client/build')));
 
 app.use("/api", apiRouter);
 
