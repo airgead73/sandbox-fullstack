@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js && cd ./src/client npm run build",
+    "start": "node src/index.js",
+    "build:client": "cd ./src/client && npm run build",
+    "clear:client": "rm -rf ./src/client/build",
     "logs": "heroku logs --tail -a dpm-sandbox-api"
   },
   "keywords": [],
