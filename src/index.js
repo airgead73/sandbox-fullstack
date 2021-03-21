@@ -21,7 +21,23 @@ const apiRouter = express.Router();
  *  App Configuration
  */
 
-app.use(helmet());
+ app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"], 
+        scriptSrc: ["'self'"],
+        styleSrc: ["'self'", 'https://fonts.googleapis.com', "'unsafe-inline'"],
+        imgSrc: ["'self'", 'data:'],
+        connectSrc: ["'self'", 'https://dpmsandbox.us.auth0.com/oauth/token'],
+        fontSrc: ["'self'", 'https://fonts.gstatic.com'],
+        objectSrc: ["'self'"],
+        mediaSrc: ["'self'"],
+        frameSrc: ["'self'", "dpmsandbox.us.auth0.com"],
+      },
+    }
+  })
+);
 app.use(cors({ origin: clientOrigins }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
