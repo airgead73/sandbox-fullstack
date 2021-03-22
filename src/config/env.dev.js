@@ -2,10 +2,12 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
+const ISDEV = process.env.NODE_ENV === 'development';
+
 const audience = process.env.AUTH0_AUDIENCE;
 const domain = process.env.AUTH0_DOMAIN;
-const serverPort = process.env.SERVER_PORT || 6060;
-const clientOriginUrl = process.env.CLIENT_ORIGIN_URL;
+const serverPort = ISDEV ? process.env.SERVER_PORT : process.env.PORT;
+const clientOriginUrl = ISDEV ? process.env.CLIENT_ORIGIN_URL_DEV : process.env.CLIENT_ORIGIN_URL;
 
 if (!audience) {
   throw new Error(
