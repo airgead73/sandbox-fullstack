@@ -4,6 +4,7 @@ const isDev = process.env.NODE_ENV === 'development';
 const serverPort = isDev ? process.env.SERVER_PORT : process.env.PORT;
 const clientOriginUrl = isDev? process.env.CLIENT_ORIGIN_URL_DEV : process.env.CLIENT_ORIGIN_URL;
 const csp = require('./csp');
+const limit = process.env.RATE_LIMIT;
 
 if (!audience) {
   throw new Error(
@@ -33,10 +34,11 @@ const clientOrigins = [`${clientOriginUrl}`];
 
 module.exports = {
   audience,
-  csp,
-  domain,
-  clientOriginUrl,
-  isDev,
-  serverPort,
   clientOrigins,
+  clientOriginUrl,
+  csp,
+  domain,  
+  isDev,
+  limit,
+  serverPort  
 };
