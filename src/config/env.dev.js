@@ -2,12 +2,13 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-const ISDEV = process.env.NODE_ENV === 'development';
+
 
 const audience = process.env.AUTH0_AUDIENCE;
 const domain = process.env.AUTH0_DOMAIN;
-const serverPort = ISDEV ? process.env.SERVER_PORT : process.env.PORT;
-const clientOriginUrl = ISDEV ? process.env.CLIENT_ORIGIN_URL_DEV : process.env.CLIENT_ORIGIN_URL;
+const isDev = process.env.NODE_ENV === 'development';
+const serverPort = isDev ? process.env.SERVER_PORT : process.env.PORT;
+const clientOriginUrl = isDev? process.env.CLIENT_ORIGIN_URL_DEV : process.env.CLIENT_ORIGIN_URL;
 
 if (!audience) {
   throw new Error(
@@ -35,12 +36,11 @@ if (!clientOriginUrl) {
 
 const clientOrigins = [`${clientOriginUrl}`];
 
-console.log(clientOrigins)
-
 module.exports = {
   audience,
   domain,
   clientOriginUrl,
+  isDev,
   serverPort,
   clientOrigins,
 };

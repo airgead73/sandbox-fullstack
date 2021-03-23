@@ -1,8 +1,9 @@
 /**
  * Service Methods
  */
+const { isDev } = require('./../config/env.dev');
 
-const host = process.env.NODE_ENV === 'development' ? 'LOCAL' : 'HEROKU'
+const host = isDev ? 'LOCAL' : 'HEROKU'
 
 const getPublicMessage = () => {
   return {
