@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev:server": "NODE_ENV=development nodemon src/index.js",
-    "dev:client": "cd src/client/ && npm start",
+    "dev:client": "cd src/views/ && npm start",
+    "build:client" :"cd src/views && npm run build",
     "start": "NODE_ENV=production node src/index.js",
     "logs": "heroku logs --tail -a dpm-sandbox-api",
-    "clear": "rm -rf src/client/build"
+    "clear": "rm -rf src/views/build"
   },
   "keywords": [],
   "author": "",
