@@ -17,7 +17,13 @@ const xss = require('xss-clean');
  * Internal Modules
  */
 const { apiRouter } = require('./controllers/routes');
-const { clientOrigins, csp, isDev, limit } = require("./config/env.dev");
+const { 
+  clientOrigins,
+  connectDB, 
+  csp, 
+  isDev, 
+  limit 
+} = require("./config/env.dev");
 
 
 
@@ -25,6 +31,7 @@ const { clientOrigins, csp, isDev, limit } = require("./config/env.dev");
  * Initialize App 
  */
 const app = express();
+connectDB();
 
 /**
  * App security

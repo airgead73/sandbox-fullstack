@@ -3,7 +3,9 @@ const domain = process.env.AUTH0_DOMAIN;
 const isDev = process.env.NODE_ENV === 'development';
 const serverPort = isDev ? process.env.SERVER_PORT : process.env.PORT;
 const clientOriginUrl = isDev? process.env.CLIENT_ORIGIN_URL_DEV : process.env.CLIENT_ORIGIN_URL;
+const connectDB = require('./db');
 const csp = require('./csp');
+
 const limit = process.env.RATE_LIMIT;
 
 if (!audience) {
@@ -36,6 +38,7 @@ module.exports = {
   audience,
   clientOrigins,
   clientOriginUrl,
+  connectDB,
   csp,
   domain,  
   isDev,
