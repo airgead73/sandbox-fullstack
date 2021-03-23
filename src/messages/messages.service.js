@@ -2,15 +2,17 @@
  * Service Methods
  */
 
+const host = process.env.NODE_ENV === 'development' ? 'LOCAL' : 'HEROKU'
+
 const getPublicMessage = () => {
   return {
-    message: "The API doesn't require an access token to share this message.",
+    message: `${host}: The API doesn't require an access token to share this message.`,
   };
 };
 
 const getProtectedMessage = () => {
   return {
-    message: "The API successfully validated your access token.",
+    message: `${host}: The API successfully validated your access token.`,
   };
 };
 

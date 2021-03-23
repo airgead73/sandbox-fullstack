@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 export const ExternalApi = () => {
   const [message, setMessage] = useState("");
-  const serverUrl = process.env.REACT_APP_SERVER_URL;
+  const serverUrl = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_SERVER_URL_DEV : process.env.REACT_APP_SERVER_URL;
 
   const { getAccessTokenSilently } = useAuth0();
 

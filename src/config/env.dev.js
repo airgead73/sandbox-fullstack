@@ -35,6 +35,8 @@ if (!clientOriginUrl) {
 
 const clientOrigins = [`${clientOriginUrl}`];
 
+console.log(clientOrigins)
+
 module.exports = {
   audience,
   domain,
