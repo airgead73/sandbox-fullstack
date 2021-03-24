@@ -18,7 +18,7 @@ const {
 const { checkJwt } = require('./../middleware/handleAuthentication');
 const handleQuery = require('./../middleware/handleQuery');
 
-//projectsRouter.use(checkJwt);
+projectsRouter.use(checkJwt);
 
 // router
 projectsRouter
