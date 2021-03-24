@@ -28,7 +28,7 @@ export const ExternalApi = () => {
       const token = await getAccessTokenSilently();
 
       const response = await fetch(
-        `${serverUrl}/api/messages/protected`,
+        `${serverUrl}/api/projects`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -65,7 +65,7 @@ export const ExternalApi = () => {
           className="btn btn-primary"
           onClick={callSecureApi}
         >
-          Get Protected Message
+          Number of Projects
         </button>
       </div>
       {message && (
