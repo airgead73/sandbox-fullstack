@@ -79,7 +79,7 @@ app.use(function(req, res, next) {
 app.use(function (err, req, res, next) {
   const errorLog = {
     error: true,
-    status: err.status || null,
+    status: err.status || 500,
     code: err.code || null,
     name: err.name,
     message: err.message
