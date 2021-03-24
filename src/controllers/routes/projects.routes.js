@@ -2,7 +2,7 @@ const { Router } = require('express');
 const projectsRouter = Router();
 
 // models
-//const Project = require('./../../models/Project');
+const Project = require('./../../models/Project');
 
 // actions
 const {
@@ -16,13 +16,14 @@ const {
 
 // middleware
 const { checkJwt } = require('./../middleware/handleAuthentication');
+const handleQuery = require('./../middleware/handleQuery');
 
-projectsRouter.use(checkJwt);
+//projectsRouter.use(checkJwt);
 
 // router
 projectsRouter
   .route('/')
-  .get(read)
+  .get(handleQuery(Project), read)
   .post(create)
   .delete(delete_all);
 

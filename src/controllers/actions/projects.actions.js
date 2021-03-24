@@ -28,14 +28,14 @@ const Project = require('./../../models/Project');
  */
 
 exports.read = asyncHandler(async function(req, res, next) {
-  const projects = await Project.find();
+  const { success, count, data } = res.results;
   return res
     .status(200)
     .json({
-      success: true,
-      message: 'Projects found.',
-      count: projects.length,
-      results: projects
+      success,
+      message: `Projects found: ${count}`,
+      count,
+      results: data
     });  
 });
 
