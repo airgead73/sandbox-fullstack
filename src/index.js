@@ -4,7 +4,7 @@
 
 const cookieParser = require('cookie-parser');
 const cors = require("cors");
-const createErrors = require('http-errors');
+const createError = require('http-errors');
 const express = require("express");
 const helmet = require("helmet");
 const hpp = require('hpp');
@@ -72,10 +72,27 @@ app.use("/api", apiRouter);
 /**
  *  Handle Errors
 */
+app.use(function(req, res, next) {
+  next(createError(404));
+});
 
 app.use(function (err, req, res, next) {
-  console.log(err);
-  res.status(500).send(err.message);
+  const errorLog = {
+    error: true,
+    status: err.status || null,
+    code: err.code || null,
+    name: err.name,
+    message: err.message
+  }
+
+  const errorObject = {...errorLog}
+  errorObject.details = err.stack
+
+  console.log(errorObject);
+
+  return res
+    .status(err.status)
+    .json(errorLog);
 });
 
 /**
