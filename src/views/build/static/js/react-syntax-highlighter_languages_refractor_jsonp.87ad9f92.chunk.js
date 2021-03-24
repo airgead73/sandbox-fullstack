@@ -1,2 +1,0 @@
-(this.webpackJsonpclient=this.webpackJsonpclient||[]).push([[106],{244:function(n,s,e){"use strict";var t=e(34);function a(n){n.register(t),n.languages.jsonp=n.languages.extend("json",{punctuation:/[{}[\]();,.]/}),n.languages.insertBefore("jsonp","punctuation",{function:/(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*\()/})}n.exports=a,a.displayName="jsonp",a.aliases=[]}}]);
-//# sourceMappingURL=react-syntax-highlighter_languages_refractor_jsonp.87ad9f92.chunk.js.map
