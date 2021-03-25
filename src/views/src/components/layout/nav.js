@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
+
+
 
 const ProjectsNav = () => {
+  let { url } = useRouteMatch();
   return ( 
     <ul>
       <li><Link to="/projects/detail">detail</Link></li>
@@ -31,7 +34,7 @@ const Nav = () => {
         </li>
         <li><Link to="/photos">photos</Link>
           <PhotosNav/>
-        </li>
+        </li> 
       </ul>
     </nav>
    );
