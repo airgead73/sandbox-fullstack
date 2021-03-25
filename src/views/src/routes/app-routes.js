@@ -14,22 +14,24 @@ import NotFound from './../pages/NotFound';
 const ProjectsRoutes = () => {
   return (
 
-    <React.Fragment>
+    <Switch.Fragment>
       <Route path="/projects/detail" component={ProjectsDetail}/>
       <Route path="/projects/add" component={ProjectsAdd}/>
       <Route path="/projects/update" component={ProjectsUpdate}/>
-    </React.Fragment>
+      <Route path="*" component={NotFound}/> 
+    </Switch.Fragment>
 
   )
 }
 
 const PhotosRoutes = () => {
   return (
-    <React.Fragment>
+    <Switch>
       <Route path="/photos/detail" component={PhotosDetail}/>
       <Route path="/photos/add" component={PhotosAdd}/>
-      <Route path="/photos/update" component={PhotosUpdate}/>     
-    </React.Fragment>
+      <Route path="/photos/update" component={PhotosUpdate}/>  
+      <Route path="*" component={NotFound}/>    
+    </Switch>
   )
 }
 
@@ -39,12 +41,14 @@ const AppRoutes = () => {
     <Switch>
       <Route exact path="/" component={Home}/>
       <Route exact path="/projects" component={ProjectsLanding}/> 
-      <ProjectsRoutes/>
       <Route exact path="/photos" component={PhotosLanding}/> 
-      <PhotosRoutes/> 
       <Route path="*" component={NotFound}/>      
     </Switch>
    );
 }
  
-export default AppRoutes;
+export {
+  AppRoutes,
+  ProjectsRoutes,
+  PhotosRoutes
+};
