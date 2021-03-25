@@ -2,6 +2,7 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import "./app.css";
+import Layout from "./layout";
 
 const App = () => {
 
@@ -13,7 +14,7 @@ const App = () => {
 
   return (
     <React.Fragment>
-      <h1>sandbox fullstack</h1>
+      <Layout/>
     </React.Fragment>
   );
 };
