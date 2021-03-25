@@ -1,13 +1,16 @@
 import './App.css';
+import { Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
-import {Projects} from './pages/Projects';
-import {Photos} from './pages/Photos';
+import { ProjectsLanding } from './pages/Projects';
+import { PhotosLanding } from './pages/Photos';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Fullstack Sandbox</h1>
-    </div>
+    <Switch>
+      <Route exact path="/" component={Home}/>
+      <Route path="/projects" component={ProjectsLanding}/>
+      <Route path="/photos" component={PhotosLanding}/>
+    </Switch>
   );
 }
 
