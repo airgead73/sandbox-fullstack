@@ -29,10 +29,10 @@ function App() {
         ))}        */}
         {appRoutes.map((route) => {
           console.log(route.protected)
-          if('protected',route.protected) {
-            <ProtectedRoute key={route.path} path={route.path} component={route.main}/>
+          if(route.protected) {
+            return <ProtectedRoute key={route.path} path={route.path} component={route.main}/>
           } else {
-            <Route key={route.path} path={route.path} component={route.main}/>
+            return <Route key={route.path} path={route.path} component={route.main}/>
           }
         })}
       </Switch>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import { appRoutes } from './../routes/index';
+import { ProtectedRoute } from './../auth';
 
 const Nav = () => {
   return ( 
@@ -13,7 +14,7 @@ const Nav = () => {
     <hr/>
     <Switch>
 
-    {appRoutes.map((route) => (
+    {/* {appRoutes.map((route) => (
       <Route
         key={route.path}
         path={route.path}
@@ -21,7 +22,15 @@ const Nav = () => {
       >
         <route.sidebar/>
       </Route>
-    ))}
+    ))} */}
+        {appRoutes.map((route) => {
+          console.log(route.protected)
+          if(route.protected) {
+            return <ProtectedRoute key={route.path} path={route.path} component={route.main}/>
+          } else {
+            return <Route key={route.path} path={route.path} component={route.sidebar}/>
+          }
+        })}    
     </Switch>
   </nav>
    );
