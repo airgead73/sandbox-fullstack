@@ -1,6 +1,8 @@
-import { routes_primary as appRoutes } from './app-routes';
+import AppRoutes from './app-routes';
+import SidebarRoutes from './sidebar-routes';
 
 export {
-  appRoutes
+  AppRoutes,
+  SidebarRoutes
 }
 

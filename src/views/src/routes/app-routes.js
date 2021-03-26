@@ -1,39 +1,19 @@
 import React from 'react';
-import { HomeSidebar, HomeLanding } from './../pages/Home/index'
-import { ProjectsSidebar, ProjectsLanding } from './../pages/Projects/index';
-import { PhotosSidebar, PhotosLanding } from './../pages/Photos/index';
-import { NotFoundSidebar, NotFoundLanding } from './../pages/NotFound/index'
+import { Switch, Route } from 'react-router-dom';
+import { ProtectedRoute } from './../auth';
+import { HomeLanding } from './../pages/Home';
+import { ProjectsLanding } from './../pages/Projects';
+import { NotFoundLanding } from './../pages/NotFound';
 
+const AppRoutes = () => {
+  return ( 
+    <Switch>
+    <Route exact path="/" component={HomeLanding}/>
+    <ProtectedRoute path="/projects" component={ProjectsLanding}/>
+    <Route path="*" component={NotFoundLanding}/>
+    </Switch> 
+   );
+}
+ 
+export default AppRoutes;
 
-const routes_primary = [
-  {
-    path: '/',
-    exact: true,
-    protected: false,
-    sidebar: () => <HomeSidebar/>,
-    main: () => <HomeLanding/>,
-  },
-  {
-    path: '/projects',
-    exact: false,
-    protected: true,
-    sidebar: () => <ProjectsSidebar/>,
-    main: () => <ProjectsLanding/>
-  },
-  {
-    path: '/photos',
-    exact: false,
-    protected: true,
-    sidebar: () => <PhotosSidebar/>,
-    main: () => <PhotosLanding/>
-  },  
-  {
-    path: '*',
-    exact: false,
-    protected: true,
-    sidebar: () => <NotFoundSidebar/>,
-    main: () => <NotFoundLanding/>
-  }  
-];
-
-export { routes_primary };
