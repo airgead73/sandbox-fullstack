@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import { appRoutes } from './routes/index';
 import Loading from './pages/Loading';
@@ -18,15 +18,6 @@ function App() {
   return (
     <Layout>
       <Switch>
-      {/* {appRoutes.map((route) => (
-        <Route
-          key={route.path}
-          path={route.path}
-          exact={route.exact}
-        >
-          <route.main/>
-        </Route>
-        ))}        */}
         {appRoutes.map((route) => {
           console.log(route.protected)
           if(route.protected) {
