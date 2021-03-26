@@ -2,74 +2,34 @@ import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 import { appRoutes } from './routes/index';
+import Loading from './pages/Loading';
+import Layout from './layout';
+import { useAuth0 } from '@auth0/auth0-react';
 
-// const routes = [
-//   {
-//     path: '/',
-//     exact: true,
-//     sidebar: () => <HomeSidebar/>,
-//     main: () => <HomeLanding/>,
-//   },
-//   {
-//     path: '/projects',
-//     exact: false,
-//     sidebar: () => <ProjectsSidebar/>,
-//     main: () => <ProjectsLanding/>
-//   },
-//   {
-//     path: '/photos',
-//     exact: false,
-//     sidebar: () => <PhotosSidebar/>,
-//     main: () => <PhotosLanding/>
-//   },  
-//   {
-//     path: '*',
-//     exact: false,
-//     sidebar: () => <NotFoundSidebar/>,
-//     main: () => <NotFoundLanding/>
-//   }  
-// ];
+
 
 function App() {
-  return (
-    <React.Fragment>
-      <header>
-        <h1>Portfolio Application</h1>
-      </header>
-      <nav>
-      <ul>
-        <li><Link to="/">home</Link></li>
-        <li><Link to="/projects">projects</Link></li>
-        <li><Link to="/photos">photos</Link></li>
-      </ul>
-      <hr/>
-      <Switch>
 
+  const { isLoading } = useAuth0();
+
+  if(isLoading) {
+    return <Loading/>
+  }
+
+  return (
+    <Layout>
+      <Switch>
       {appRoutes.map((route) => (
         <Route
           key={route.path}
           path={route.path}
           exact={route.exact}
         >
-          <route.sidebar/>
+          <route.main/>
         </Route>
-      ))}
-      </Switch>
-    </nav>
-      <main>
-        <Switch>
-        {appRoutes.map((route) => (
-          <Route
-            key={route.path}
-            path={route.path}
-            exact={route.exact}
-          >
-            <route.main/>
-          </Route>
         ))}       
-        </Switch>
-      </main>
-    </React.Fragment>
+      </Switch>
+    </Layout>
   );
 }
 
