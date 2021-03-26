@@ -28,7 +28,8 @@ function App() {
         </Route>
         ))}        */}
         {appRoutes.map((route) => {
-          if(route.protected) {
+          console.log(route.protected)
+          if('protected',route.protected) {
             <ProtectedRoute key={route.path} path={route.path} component={route.main}/>
           } else {
             <Route key={route.path} path={route.path} component={route.main}/>
