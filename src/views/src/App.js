@@ -12,6 +12,11 @@ import {
   ProjectsSidebar
 } from './pages/Projects';
 
+import {
+  PhotosLanding,
+  PhotosSidebar
+} from './pages/Photos';
+
 const NotFoundSidebar = () => {
   return <h2>Sidebar: Not Found</h2>
 }
@@ -35,6 +40,12 @@ const routes = [
     main: () => <ProjectsLanding/>
   },
   {
+    path: '/photos',
+    exact: false,
+    sidebar: () => <PhotosSidebar/>,
+    main: () => <PhotosLanding/>
+  },  
+  {
     path: '*',
     exact: false,
     sidebar: () => <NotFoundSidebar/>,
@@ -52,6 +63,7 @@ function App() {
       <ul>
         <li><Link to="/">home</Link></li>
         <li><Link to="/projects">projects</Link></li>
+        <li><Link to="/photos">photos</Link></li>
       </ul>
       <hr/>
       <Switch>

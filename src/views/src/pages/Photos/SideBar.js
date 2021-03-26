@@ -1,7 +1,7 @@
 import React from 'react';
 
-const HomeSidebar = () => {
-  return <h2>home sidebar content</h2>
+const PhotosSidebar = () => {
+  return <h2>photos sidebar content</h2>
 }
 
-export default HomeSidebar;
+export default PhotosSidebar;

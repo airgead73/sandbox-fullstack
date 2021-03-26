@@ -1,7 +1,7 @@
-import HomeLanding from './Landing';
-import HomeSidebar from './SideBar';
+import PhotosLanding from './Landing';
+import PhotosSidebar from './SideBar';
 
 export {
-  HomeLanding,
-  HomeSidebar
+  PhotosLanding,
+  PhotosSidebar
 }
