@@ -6,8 +6,9 @@ import Main from './Main';
 const Layout = ({ children }) => {
   return ( 
     <React.Fragment>
-      <Header/>
-      <Nav/>
+      <Header>
+        <Nav/>
+      </Header>
       <Main>
         {children}
       </Main>
