@@ -1,23 +1,43 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import './App.css';
-import Loading from './pages/Loading';
-import Layout from './layout';
-import { useAuth0 } from '@auth0/auth0-react';
-import {AppRoutes} from './routes';
+import { Switch, Route, Link } from 'react-router-dom';
+
+const Landing = () => {
+  return ( 
+    <div>landing page</div>
+   );
+}
+
+const ProjectsLanding = () => {
+  return ( 
+    <div>ProjectsLanding</div>
+   );
+}
+
 
 function App() {
 
-  const { isLoading } = useAuth0();
-
-  if(isLoading) {
-    return <Loading/>
-  }
-
   return (
-    <Layout>
-      <AppRoutes/>
-    </Layout>
+    <React.Fragment>
+      <header>
+        <h1>portfolio application</h1>
+        <nav>
+          <ul>
+            <li to="/"><Link>home</Link></li>
+            <li to="/projects"><Link>projects</Link></li>                        
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <Switch>
+          <Route exact path="/" component={Landing}/>
+          <Route path="/projects" component={ProjectsLanding}/>
+        </Switch>
+      </main>
+      <footer>
+
+      </footer>
+      
+    </React.Fragment>
   );
 }
 
