@@ -1,56 +1,34 @@
 import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import './App.css';
+import { appRoutes } from './routes/index';
 
-import {
-  HomeLanding,
-  HomeSidebar
-} from './pages/Home';
-
-import {
-  ProjectsLanding,
-  ProjectsSidebar
-} from './pages/Projects';
-
-import {
-  PhotosLanding,
-  PhotosSidebar
-} from './pages/Photos';
-
-import {
-  NotFoundLanding,
-  NotFoundSidebar
-} from './pages/NotFound';
-
-
-
-
-const routes = [
-  {
-    path: '/',
-    exact: true,
-    sidebar: () => <HomeSidebar/>,
-    main: () => <HomeLanding/>,
-  },
-  {
-    path: '/projects',
-    exact: false,
-    sidebar: () => <ProjectsSidebar/>,
-    main: () => <ProjectsLanding/>
-  },
-  {
-    path: '/photos',
-    exact: false,
-    sidebar: () => <PhotosSidebar/>,
-    main: () => <PhotosLanding/>
-  },  
-  {
-    path: '*',
-    exact: false,
-    sidebar: () => <NotFoundSidebar/>,
-    main: () => <NotFoundLanding/>
-  }  
-];
+// const routes = [
+//   {
+//     path: '/',
+//     exact: true,
+//     sidebar: () => <HomeSidebar/>,
+//     main: () => <HomeLanding/>,
+//   },
+//   {
+//     path: '/projects',
+//     exact: false,
+//     sidebar: () => <ProjectsSidebar/>,
+//     main: () => <ProjectsLanding/>
+//   },
+//   {
+//     path: '/photos',
+//     exact: false,
+//     sidebar: () => <PhotosSidebar/>,
+//     main: () => <PhotosLanding/>
+//   },  
+//   {
+//     path: '*',
+//     exact: false,
+//     sidebar: () => <NotFoundSidebar/>,
+//     main: () => <NotFoundLanding/>
+//   }  
+// ];
 
 function App() {
   return (
@@ -67,7 +45,7 @@ function App() {
       <hr/>
       <Switch>
 
-      {routes.map((route) => (
+      {appRoutes.map((route) => (
         <Route
           key={route.path}
           path={route.path}
@@ -80,7 +58,7 @@ function App() {
     </nav>
       <main>
         <Switch>
-        {routes.map((route) => (
+        {appRoutes.map((route) => (
           <Route
             key={route.path}
             path={route.path}

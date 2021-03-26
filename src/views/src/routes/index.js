@@ -1,3 +1,6 @@
-import { AppRoutes, ProjectsRoutes, PhotosRoutes } from './app-routes';
+import { routes_primary as appRoutes } from './app-routes';
 
-export { AppRoutes, ProjectsRoutes, PhotosRoutes }
+export {
+  appRoutes
+}
+

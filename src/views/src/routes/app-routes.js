@@ -1,59 +1,35 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Home from './../pages/Home';
-import { ProjectsLanding } from './../pages/Projects';
-import { ProjectsAdd } from './../pages/Projects';
-import { ProjectsDetail } from './../pages/Projects';
-import { ProjectsUpdate } from './../pages/Projects';
+import { HomeSidebar, HomeLanding } from './../pages/Home/index'
+import { ProjectsSidebar, ProjectsLanding } from './../pages/Projects/index';
+import { PhotosSidebar, PhotosLanding } from './../pages/Photos/index';
+import { NotFoundSidebar, NotFoundLanding } from './../pages/NotFound/index'
 
-const ProjectsLinks = () => {
-  return (
-    <ul>
-      <li><Link to="/projects/add">add a project</Link></li>
-      <li><Link to="/projects/detail">project detail</Link></li>
-      <li><Link to="/projects/update">update a project</Link></li>
-    </ul>
-  )
-}
 
-const routes = [
+const routes_primary = [
   {
     path: '/',
     exact: true,
-    sidebar: () => <div>home page information</div>,
-    main: () => <Home/>,
+    sidebar: () => <HomeSidebar/>,
+    main: () => <HomeLanding/>,
   },
   {
     path: '/projects',
     exact: false,
-    sidebar: () => <ProjectsLinks/>,
+    sidebar: () => <ProjectsSidebar/>,
     main: () => <ProjectsLanding/>
-  }
-];
-
-const routes_projects = [
-  {
-    path: '/projects/add',
-    exact: false,
-    sidebar: () => <div>add sidebar</div>,
-    main: () => <ProjectsAdd/>,
   },
   {
-    path: '/projects/detail',
+    path: '/photos',
     exact: false,
-    sidebar: () => <div>detail sidebar</div>,
-    main: () => <ProjectsDetail/>,
-  },
+    sidebar: () => <PhotosSidebar/>,
+    main: () => <PhotosLanding/>
+  },  
   {
-    path: '/projects/update',
+    path: '*',
     exact: false,
-    sidebar: () => <div>update sidebar</div>,
-    main: () => <ProjectsUpdate/>,
-  },     
-
+    sidebar: () => <NotFoundSidebar/>,
+    main: () => <NotFoundLanding/>
+  }  
 ];
 
-export { 
-  routes,
-  routes_projects 
-}
+export { routes_primary };
