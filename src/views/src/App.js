@@ -56,7 +56,7 @@ function App() {
   return (
     <React.Fragment>
       <header>
-        <h1>Fullstack Application</h1>
+        <h1>Portfolio Application</h1>
       </header>
       <nav>
       <ul>
