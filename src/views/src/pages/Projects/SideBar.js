@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ProjectsSidebar = () => {
-  return <h2>projects sidebar content</h2>
+  return <h4>projects sidebar content</h4>
 }
 
 export default ProjectsSidebar;

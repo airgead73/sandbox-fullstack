@@ -17,13 +17,12 @@ import {
   PhotosSidebar
 } from './pages/Photos';
 
-const NotFoundSidebar = () => {
-  return <h2>Sidebar: Not Found</h2>
-}
+import {
+  NotFoundLanding,
+  NotFoundSidebar
+} from './pages/NotFound';
 
-const NotFoundMain = () => {
-  return <h2>Page Not Found</h2>
-}
+
 
 
 const routes = [
@@ -49,7 +48,7 @@ const routes = [
     path: '*',
     exact: false,
     sidebar: () => <NotFoundSidebar/>,
-    main: () => <NotFoundMain/>
+    main: () => <NotFoundLanding/>
   }  
 ];
 

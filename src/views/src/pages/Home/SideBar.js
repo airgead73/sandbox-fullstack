@@ -1,7 +1,7 @@
 import React from 'react';
 
 const HomeSidebar = () => {
-  return <h2>home sidebar content</h2>
+  return <h4>home sidebar content</h4>
 }
 
 export default HomeSidebar;

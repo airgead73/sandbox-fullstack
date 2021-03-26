@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PhotosSidebar = () => {
-  return <h2>photos sidebar content</h2>
+  return <h4>photos sidebar content</h4>
 }
 
 export default PhotosSidebar;
