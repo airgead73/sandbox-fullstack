@@ -1,41 +1,24 @@
 import React from 'react';
-import { Link, useRouteMatch } from 'react-router-dom';
-
-
-
-const ProjectsNav = () => {
-  let { url } = useRouteMatch();
-  return ( 
-    <ul>
-      <li><Link to="/projects/detail">detail</Link></li>
-      <li><Link to="/projects/add">add project</Link></li>
-      <li><Link to="/projects/update">update project</Link></li>      
-    </ul>
-   );
-};
-
-const PhotosNav = () => {
-  return ( 
-    <ul>
-      <li><Link to="/photos/detail">detail</Link></li>
-      <li><Link to="/photos/add">add photo</Link></li>
-      <li><Link to="/photos/update">update photo</Link></li>      
-    </ul>
-   );
-};
+import { Route, Link } from 'react-router-dom';
+import { routes_projects as routes } from './../../routes/app-routes';
 
 const Nav = () => {
   return ( 
     <nav>
       <ul>
         <li><Link to="/">home</Link></li>
-        <li><Link to="/projects">projects</Link>
-          <ProjectsNav/>
-        </li>
-        <li><Link to="/photos">photos</Link>
-          <PhotosNav/>
-        </li> 
+        <li><Link to="/projects">projects</Link></li>
       </ul>
+      <hr/>
+      {routes.map((route) => (
+        <Route
+          key={route.path}
+          path={route.path}
+          exact={route.exact}
+        >
+          <route.sidebar/>
+        </Route>
+      ))}
     </nav>
    );
 }
