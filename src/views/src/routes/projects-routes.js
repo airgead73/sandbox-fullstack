@@ -13,7 +13,6 @@ import {
 const ProjectsRoutes = () => {
   return ( 
     <Switch>
-      <ProtectedRoute path="/projects" component={ProjectsLanding}/>
       <ProtectedRoute path="/projects/add" component={ProjectsAdd}/>
       <ProtectedRoute path="/projects/list" component={ProjectsList}/>
       <ProtectedRoute path="/projects/detail" component={ProjectsDetail}/>
