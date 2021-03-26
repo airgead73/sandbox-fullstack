@@ -2,21 +2,15 @@ import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import './App.css';
 
-const HomeSidebar = () => {
-  return <h2>home sidebar content</h2>
-}
+import {
+  HomeLanding,
+  HomeSidebar
+} from './pages/Home';
 
-const HomeMain = () => {
-  return <h2>home main content</h2>
-}
-
-const ProjectsSidebar = () => {
-  return <h2>projects sidebar content</h2>
-}
-
-const ProjectsMain = () => {
-  return <h2>projects main content</h2>
-}
+import {
+  ProjectsLanding,
+  ProjectsSidebar
+} from './pages/Projects';
 
 const NotFoundSidebar = () => {
   return <h2>Sidebar: Not Found</h2>
@@ -32,13 +26,13 @@ const routes = [
     path: '/',
     exact: true,
     sidebar: () => <HomeSidebar/>,
-    main: () => <HomeMain/>,
+    main: () => <HomeLanding/>,
   },
   {
     path: '/projects',
     exact: false,
     sidebar: () => <ProjectsSidebar/>,
-    main: () => <ProjectsMain/>
+    main: () => <ProjectsLanding/>
   },
   {
     path: '*',
