@@ -1,5 +1,6 @@
 import React from 'react';
-import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
+import { Switch, Route, Link, useRouteMatch, useParams } from 'react-router-dom';
+import NotFound from './../NotFound';
 
 const ProjectsAdd = () => {
   return (
@@ -14,14 +15,16 @@ const ProjectsList = () => {
 }
 
 const ProjectsDetail = () => {
+  const { projectID } = useParams();
   return (
-    <h3>project detail</h3>
+    <h3>project detail: {projectID}</h3>
   )
 }
 
 const ProjectsUpdate = () => {
+  const { projectID } = useParams();
   return (
-    <h3>update project</h3>
+    <h3>update project: {projectID}</h3>
   )
 }
 
@@ -39,14 +42,15 @@ const ProjectsLanding = () => {
       <ul>
         <li><Link to="/projects/add">add a project</Link></li>
         <li><Link to="/projects/list">projects list</Link></li>     
-        <li><Link to="/projects/detail">project detail</Link></li>
-        <li><Link to="/projects/update">update project</Link></li>                    
+        <li><Link to="/projects/projectabc/detail">project detail</Link></li>
+        <li><Link to="/projects/projectabc/update">update project</Link></li>                    
       </ul>
       <Switch>
         <Route path="/projects/add" component={ProjectsAdd}/>
         <Route path="/projects/list" component={ProjectsList}/>
-        <Route path="/projects/detail" component={ProjectsDetail}/>
-        <Route path="/projects/update" component={ProjectsUpdate}/>
+        <Route path="/projects/:projectID/detail" component={ProjectsDetail}/>
+        <Route path="/projects/:projectID/update" component={ProjectsUpdate}/>
+        <Route path="/projects/*" component={NotFound}/>
       </Switch>
     </React.Fragment>
    );

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
 import { ProjectsLanding } from './pages/Projects';
+import NotFound from './pages/NotFound';
 
 const Landing = () => {
   const { url, path } = useRouteMatch();
@@ -25,12 +26,6 @@ const PhotosLanding = () => {
   return ( 
     <h2>photos page</h2>
    );
-}
-
-const NotFound = () => {
-  return (
-    <h2>page not found</h2>
-  )
 }
 
 function App() { 
