@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
-import { AddForm } from '.';
-import usePost from '../../fetch/usePost';
+import React from 'react';
+import AddForm from './AddForm';
 
 const Add = () => {
 
   return (
-    <AddForm/>
+    <React.Fragment>
+      <h2>add project</h2>
+      <AddForm/>
+    </React.Fragment>
   )
 }
 

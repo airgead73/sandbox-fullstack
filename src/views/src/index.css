@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   margin-left: 400px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -34,27 +37,28 @@ h2 {
 .form {
   max-width: 500px;
   margin: 0 auto;
+  padding: 0;
 }
 
 .form__fieldset {
   padding: 30px;
 }
 
-.input, .input__title, .input__field {
+.field, .field__title, .field__content {
   display: block;
-}
-
-.input {
-  margin-bottom: 15px;
-}
-
-.input__title {
-  font-size: .9rem;
-  margin-bottom: 3px;
-}
-
-.input__field {
   width: 100%;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.field__title {
+  margin-bottom: 3px;
+  font-size: .85rem;
+}
+
+.field__content {
   line-height: 2;
-  padding: 5px 8px;
+  padding: 0 5px;
 }
