@@ -1,35 +1,10 @@
 import React from 'react';
-import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import { Landing as ProjectsLanding } from './pages/Projects';
+import { Landing as HomeLanding } from './pages/Home';
 import NotFound from './pages/NotFound';
 
-const Landing = () => {
-
-  return ( 
-    <h2>landing page</h2>
-   );
-}
-
-const PhotosLanding = () => {
-
-  const { url, path } = useRouteMatch();
-  console.log({
-    photos_url: url,
-    photos_path: path
-  });
-
-  return ( 
-    <h2>photos page</h2>
-   );
-}
-
-function App() { 
-
-  const { url, path } = useRouteMatch();
-  console.log({
-    app_url: url,
-    app_path: path
-  });  
+function App() {  
 
   return (
     <React.Fragment>
@@ -39,15 +14,13 @@ function App() {
           <ul>
             <li><Link to="/">home</Link></li>
             <li><Link to="/projects">projects</Link></li>     
-            <li><Link to="/photos">photos</Link></li>                   
           </ul>
         </nav>
       </header>
       <main>
         <Switch>
-          <Route path="/" exact component={Landing}/>
+          <Route path="/" exact component={HomeLanding}/>
           <Route path="/projects" component={ProjectsLanding}/>
-          <Route path="/photos" component={PhotosLanding}/>
           <Route path="*" component={NotFound}/>
         </Switch>
       </main>

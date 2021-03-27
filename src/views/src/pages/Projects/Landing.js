@@ -13,8 +13,6 @@ const Landing = () => {
       <ul>
         <li><Link to={`${url}/add`}>add a project</Link></li>
         <li><Link to={`${url}/list`}>projects list</Link></li>     
-        {/* <li><Link to={`${url}/projectaljkg/detail`}>project detail</Link></li>
-        <li><Link to={`${url}/projectllaljkg/update`}>update project</Link></li>                     */}
       </ul>
       <Switch>
         <Route path={`${path}/add`} component={Add}/>
