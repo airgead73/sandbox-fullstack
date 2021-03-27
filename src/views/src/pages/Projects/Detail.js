@@ -1,10 +1,30 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Detail = () => {
-  const { id } = useParams();
+  const location = useLocation();
+  const { project } = location.state;
   return (
-    <h3>project detail: {id}</h3>
+    <article>
+    <h3>project detail</h3>
+    <h4>{project.title}
+    <br/>
+    <small>by {project.author}</small>
+    </h4>
+    <p>
+    <Link 
+      key={`update_${project._id}`} 
+      to={{
+        pathname: `/projects/${project._id}/update`,
+        state: {
+          project: project
+          }
+        }}
+        >update project
+        </Link>     
+    </p>
+    </article>
+
   )
 }
 

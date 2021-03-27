@@ -4,11 +4,6 @@ import { Landing as ProjectsLanding } from './pages/Projects';
 import NotFound from './pages/NotFound';
 
 const Landing = () => {
-  const { url, path } = useRouteMatch();
-  console.log({
-    landing_url: url,
-    landing_path: path
-  }); 
 
   return ( 
     <h2>landing page</h2>
