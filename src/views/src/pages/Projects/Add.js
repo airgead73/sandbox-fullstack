@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { AddForm } from '.';
+import usePost from '../../fetch/usePost';
 
 const Add = () => {
+
   return (
-    <h3>add project</h3>
+    <AddForm/>
   )
 }
 
