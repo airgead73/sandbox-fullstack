@@ -9,6 +9,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+header {
+  border-bottom: 3px solid gray;
+}
 
+h2 {
+  border-bottom: 1px solid gray;
+  line-height: 2;
+}
 
 
