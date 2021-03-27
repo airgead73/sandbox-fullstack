@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const TextInput = ({inputTitle, placeholder}) => {
+const TextInput = ({inputTitle, placeholder, submitted}) => {
 
   const [inputValue, setInputValue] = React.useState('');
+
+  useEffect(() => {
+
+    if(submitted) {
+      setInputValue('');
+    }
+
+  },[submitted])
 
   return ( 
     <label htmlFor="" className="field input--text">
@@ -21,9 +29,38 @@ const TextInput = ({inputTitle, placeholder}) => {
    );
 }
 
-const NumberInput = ({inputTitle, placeholder}) => {
+const TextArea = ({inputTitle, placeholder}) => {
 
   const [inputValue, setInputValue] = React.useState('');
+
+  return ( 
+    <label htmlFor="" className="field input--textarea">
+      <span className="field__title">{inputTitle}</span>
+      <textarea 
+        type="text"
+        name={inputTitle} 
+        value={inputValue} 
+        onChange={(e) => setInputValue(e.target.value)} 
+        placeholder={placeholder} 
+        autoComplete="off" 
+        id={inputTitle} 
+        className="field__content"
+      ></textarea>
+    </label>
+   );
+}
+
+const NumberInput = ({inputTitle, placeholder, submitted}) => {
+
+  const [inputValue, setInputValue] = React.useState('');
+
+  useEffect(() => {
+
+    if(submitted) {
+      setInputValue('');
+    }
+
+  },[submitted])
 
   return ( 
     <label htmlFor="" className="field input--number">
@@ -44,5 +81,6 @@ const NumberInput = ({inputTitle, placeholder}) => {
  
 export {
   NumberInput,
-  TextInput
+  TextInput,
+  TextArea
 };
