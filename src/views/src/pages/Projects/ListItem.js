@@ -1,0 +1,39 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const ListItem = ({ item }) => {
+  return ( 
+    <article>
+      <p><li>
+        {item.title} by {item.author}
+          &nbsp; 
+          <br/>
+          <small>
+            <Link 
+              to={{
+                pathname: `/projects/${item._id}/detail`,
+                state: {
+                  item: item
+                }
+              }}
+            >detail
+            </Link>
+            &nbsp; | &nbsp;
+            <Link 
+              to={{
+                pathname: `/projects/${item._id}/update`,
+                state: {
+                  item: item
+                }
+              }}
+            >update
+            </Link>
+            </small>
+          </li>
+          </p>      
+
+    </article>
+   );
+}
+ 
+export { ListItem };

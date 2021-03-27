@@ -3,21 +3,21 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Detail = () => {
   const location = useLocation();
-  const { project } = location.state;
+  const { item } = location.state;
   return (
     <article>
     <h3>project detail</h3>
-    <h4>{project.title}
+    <h4>{item.title}
     <br/>
-    <small>by {project.author}</small>
+    <small>by {item.author}</small>
     </h4>
     <p>
     <Link 
-      key={`update_${project._id}`} 
+      key={`update_${item._id}`} 
       to={{
-        pathname: `/projects/${project._id}/update`,
+        pathname: `/projects/${item._id}/update`,
         state: {
-          project: project
+          item: item
           }
         }}
         >update project
