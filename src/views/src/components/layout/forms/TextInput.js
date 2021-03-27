@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const TextInput = ({title, placeholder}) => {
+  const [inputValue, setInputValue] = useState('');
   return ( 
     <label htmlFor={title} className="input input--text">
     <span className="input__title">{title}</span>
