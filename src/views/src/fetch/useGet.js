@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 
-const useFetch = (endpoint) => {
+const useGet = (endpoint, body) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -22,9 +22,7 @@ const useFetch = (endpoint) => {
         }        
       });
 
-      const responseData = await response.json();
-
-      console.log(responseData)
+      const responseData = await response.json();      
 
       const { success, message, results } = responseData;
 
@@ -50,8 +48,8 @@ const useFetch = (endpoint) => {
 
   },[endpoint]);  
 
-  return { data, isLoading, error}
+  return { data, isLoading, error }
 
 }
 
-export default useFetch;
+export default useGet;

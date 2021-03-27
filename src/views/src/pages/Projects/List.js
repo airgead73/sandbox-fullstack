@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ListItem } from './index';
-import projects from './../../data/projects';
-import useFetch from '../../fetch/useFetch';
+import useGet from '../../fetch/useGet';
 
 const List = () => {
 
-  const { data: projects, isLoading, error } = useFetch('/api/projects');
+  const { data: projects, isLoading, error } = useGet('/api/projects');
 
   return (
     
