@@ -9,12 +9,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-header {
+header ul {
   border-bottom: 3px solid gray;
+  padding-bottom: 20px;
+}
+
+ul {
+  border-bottom: 2px solid gray;
+  padding-bottom: 20px;
 }
 
 h2 {
-  border-bottom: 1px solid gray;
   line-height: 2;
 }
 

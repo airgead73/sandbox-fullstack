@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, Link, useRouteMatch } from 'react-router-dom';
-import ProjectsLanding from './pages/Projects/ProjectsLanding';
+import { ProjectsLanding } from './pages/Projects';
 
 const Landing = () => {
   const { url, path } = useRouteMatch();
