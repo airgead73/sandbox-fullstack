@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import { serverStem } from './../config';
 
-const useGet = (endpoint, body) => {
+const useGet = (endpoint) => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const { getAccessTokenSilently } = useAuth0();  
 
-  let serverUrl = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_SERVER_URL_DEV : process.env.REACT_APP_SERVER_URL;
-
-  serverUrl = serverUrl + endpoint;
+  const serverUrl = serverStem + endpoint;
 
   const callApi = async () => {
     try {

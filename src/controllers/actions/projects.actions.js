@@ -11,6 +11,7 @@ const Project = require('./../../models/Project');
  exports.create = asyncHandler(async function(req, res, next) {
   const project = new Project(req.body);
   await project.save();
+  console.log(req.body);
 
   return res
     .status(200)
