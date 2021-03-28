@@ -5,15 +5,15 @@ const Landing = (props) => {
   return ( 
     <React.Fragment>
       <h2>home page</h2>
-      <PostForm endpoint="/api/projects">
+      <PostForm endpoint="/api/projects" status={props.status}>
       <fieldset className="form__fieldset">
         <legend>add project</legend>
-        <TextInput inputTitle="title" placeholder="enter project's title"/>
-        <TextInput inputTitle="code" placeholder="enter project's code"/>
-        <TextInput inputTitle="author" placeholder="Last name, First name"/>
-        <NumberInput inputTitle="edition" placeholder="enter project's edition"/>
-        <TextInput inputTitle="client" placeholder="enter project's client"/>
-        <TextArea inputTitle="notes" placeholder="notes..."/>
+        <TextInput status={props.status} inputTitle="title" placeholder="enter project's title"/>
+        <TextInput status={props.status} inputTitle="code" placeholder="enter project's code"/>
+        <TextInput status={props.status} inputTitle="author" placeholder="Last name, First name"/>
+        <NumberInput status={props.status} inputTitle="edition" placeholder="enter project's edition"/>
+        <TextInput status={props.status} inputTitle="client" placeholder="enter project's client"/>
+        <TextArea status={props.status} inputTitle="notes" placeholder="notes..."/>
         <Submit label="add"/>
       </fieldset>        
       </PostForm>

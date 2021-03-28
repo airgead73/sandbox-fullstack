@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react';
 
-const TextInput = ({inputTitle, placeholder, submitted}) => {
+const TextInput = ({inputTitle, placeholder, status}) => {
+
+  console.log('input status', status);
 
   const [inputValue, setInputValue] = React.useState('');
 
   useEffect(() => {
 
-    if(submitted) {
+    if(status === 'submitted') {
       setInputValue('');
     }
 
-  },[submitted])
+  },[status]);
 
   return ( 
     <label htmlFor="" className="field input--text">
@@ -29,9 +31,17 @@ const TextInput = ({inputTitle, placeholder, submitted}) => {
    );
 }
 
-const TextArea = ({inputTitle, placeholder}) => {
+const TextArea = ({inputTitle, placeholder, status}) => {
 
   const [inputValue, setInputValue] = React.useState('');
+
+  useEffect(() => {
+
+    if(status === 'submitted') {
+      setInputValue('');
+    }
+
+  },[status]);
 
   return ( 
     <label htmlFor="" className="field input--textarea">
@@ -50,17 +60,17 @@ const TextArea = ({inputTitle, placeholder}) => {
    );
 }
 
-const NumberInput = ({inputTitle, placeholder, submitted}) => {
+const NumberInput = ({inputTitle, placeholder, status}) => {
 
   const [inputValue, setInputValue] = React.useState('');
 
   useEffect(() => {
 
-    if(submitted) {
+    if(status === 'submitted') {
       setInputValue('');
     }
 
-  },[submitted])
+  },[status]);
 
   return ( 
     <label htmlFor="" className="field input--number">

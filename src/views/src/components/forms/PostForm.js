@@ -2,14 +2,20 @@ import React, { useState } from 'react';
 import { serverStem } from '../../config';
 import { useAuth0 } from '@auth0/auth0-react';
 
-const PostForm = (props) => {
-  const [submitted, setSubmitted] = useState(false);
+const PostForm = (props) => {  
+  const [status, setStatus] = useState('initial');
   const serverUrl = `${serverStem}${props.endpoint}`;
   const { getAccessTokenSilently } = useAuth0();
 
+  const changeStatus = (newStatus) => {
+
+    setStatus(newStatus);
+    
+  }
+
   const postSecure = async (e) => {
 
-    e.preventDefault();
+    e.preventDefault();    
 
     const form = e.target;
     const fields = Array.from(form.querySelectorAll('.field__content'));
@@ -35,8 +41,7 @@ const PostForm = (props) => {
       const responseData = await response.json();
 
       console.log(responseData);
-      setSubmitted(true);
-
+      changeStatus('submitted');
 
     } catch(err) {
 
@@ -46,8 +51,12 @@ const PostForm = (props) => {
 
   }
 
+
   return ( 
-    <form onSubmit={(e) => postSecure(e)}>
+    <form 
+      onSubmit={(e) => postSecure(e)}
+      status={status}
+    >
   
       {props.children}
       
