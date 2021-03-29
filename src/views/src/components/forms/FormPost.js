@@ -4,8 +4,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { FormMessage } from './';
 
 const FormPost = (props) => {
-  const [isSuccess, setIsSuccess] = useState(null);
-  const [isError, setIsError] = useState(null); 
+  const [status, setStatus] = useState('');
   const [message, setMessage] = useState(null);
   const serverUrl = `${serverStem}${props.action}`;
   const { getAccessTokenSilently } = useAuth0();
@@ -39,6 +38,7 @@ const FormPost = (props) => {
 
       console.log(responseData);
       setMessage(message);
+      setStatus('error');
       form.reset();
 
     } catch(err) {
@@ -51,7 +51,7 @@ const FormPost = (props) => {
     <form 
       onSubmit={postApi}
     >
-      {message && <FormMessage>{message}</FormMessage>}
+      {message && <FormMessage type={status}>{message}</FormMessage>}
       <fieldset>
         <legend>{props.title}</legend>
         {props.children}
