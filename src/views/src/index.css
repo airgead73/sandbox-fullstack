@@ -91,3 +91,9 @@ form button {
   color: white;
   border-color: darkslategray;
 }
+
+aside {
+  text-align: center;
+  background-color: green;
+  color: white;
+}

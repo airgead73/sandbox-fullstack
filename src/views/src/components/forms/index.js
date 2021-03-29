@@ -1,4 +1,5 @@
 import FormPost from './FormPost';
+import FormMessage from './FormMessage';
 
 import InputText from './InputText';
 import InputNumber from './InputNumber';
@@ -14,6 +15,7 @@ import BtnGroup from './BtnGroup';
 
 export {
   FormPost,
+  FormMessage,
   BtnSubmit,
   BtnReset,
   InputText,

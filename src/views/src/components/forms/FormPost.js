@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { serverStem } from '../../config';
 import { useAuth0 } from '@auth0/auth0-react';
+import { FormMessage } from './';
 
-const FormPost = (props) => {  
+const FormPost = (props) => {
+  const [isSuccess, setIsSuccess] = useState(null);
+  const [isError, setIsError] = useState(null); 
+  const [message, setMessage] = useState(null);
   const serverUrl = `${serverStem}${props.action}`;
   const { getAccessTokenSilently } = useAuth0();
 
@@ -31,8 +35,10 @@ const FormPost = (props) => {
 
       const response = await fetch(request);
       const responseData = await response.json();
+      const { message } = responseData;
 
       console.log(responseData);
+      setMessage(message);
       form.reset();
 
     } catch(err) {
@@ -45,6 +51,7 @@ const FormPost = (props) => {
     <form 
       onSubmit={postApi}
     >
+      {message && <FormMessage>{message}</FormMessage>}
       <fieldset>
         <legend>{props.title}</legend>
         {props.children}
