@@ -34,31 +34,60 @@ h2 {
 
 /* forms */
 
-.form {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 0;
+fieldset {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-style: solid;
+  border-color: darkslategray;
 }
 
-.form__fieldset {
-  padding: 30px;
+.fieldgroup {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+
 }
 
-.field, .field__title, .field__content {
+.input {
+  display: block;
+  flex: auto;
+  padding: 8px;
+}
+
+.input__title {
+  display: block;
+  margin-bottom: 3px;
+  color: darkslategray;
+}
+
+.input__field {
   display: block;
   width: 100%;
+  line-height: 3;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
-.field {
-  margin-bottom: 10px;
+.input--textarea textarea {
+  height: 100px;
 }
 
-.field__title {
-  margin-bottom: 3px;
-  font-size: .85rem;
+.btngroup {
+  text-align: center;
 }
 
-.field__content {
-  line-height: 2;
-  padding: 0 5px;
+form legend {
+  background-color: darkslategray;
+  color: white;
+  padding: 10px 12px;
+}
+
+form button {
+  padding: 10px 25px;
+  font-size: 1rem;
+  background-color: darkslategray;
+  color: white;
+  border-color: darkslategray;
 }

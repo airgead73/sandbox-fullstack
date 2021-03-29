@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { serverStem } from '../../config';
 import { useAuth0 } from '@auth0/auth0-react';
 
@@ -6,10 +6,12 @@ const FormPost = (props) => {
   const serverUrl = `${serverStem}${props.action}`;
   const { getAccessTokenSilently } = useAuth0();
 
-  const postApi = async (e) => {
-    e.preventDefault();
+  const postSecure = async (e) => {
+
+    e.preventDefault();    
+
     const form = e.target;
-    const fields = Array.from(form.querySelectorAll('.input__field'));
+    const fields = Array.from(form.querySelectorAll('input__field'));
     const collectedFields = {};
 
     fields.forEach((field) => {
@@ -24,26 +26,29 @@ const FormPost = (props) => {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json',
-          'Content-Type': `${props.enctype}`          
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify(collectedFields)
+        body: JSON.stringify(collectedFields)       
       });
-
       const response = await fetch(request);
       const responseData = await response.json();
 
       console.log(responseData);
-      form.reset();
+      changeStatus('submitted');
 
     } catch(err) {
+
       console.log(err);
+
     }
 
   }
 
+
   return ( 
     <form 
-      onSubmit={postApi}
+      onSubmit={(e) => postSecure(e)}
+      status={status}
     >
       <fieldset>
         <legend>{props.title}</legend>
