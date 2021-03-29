@@ -2,16 +2,9 @@ import React, { useState } from 'react';
 import { serverStem } from '../../config';
 import { useAuth0 } from '@auth0/auth0-react';
 
-const PostForm = (props) => {  
-  const [status, setStatus] = useState('initial');
+const FormPost = (props) => {  
   const serverUrl = `${serverStem}${props.endpoint}`;
   const { getAccessTokenSilently } = useAuth0();
-
-  const changeStatus = (newStatus) => {
-
-    setStatus(newStatus);
-    
-  }
 
   const postSecure = async (e) => {
 
@@ -64,4 +57,4 @@ const PostForm = (props) => {
    );
 }
  
-export default PostForm;
+export default FormPost;
