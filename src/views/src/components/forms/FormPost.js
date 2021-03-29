@@ -4,7 +4,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { FormMessage } from './';
 
 const FormPost = (props) => {
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState(null);
   const [message, setMessage] = useState(null);
   const serverUrl = `${serverStem}${props.action}`;
   const { getAccessTokenSilently } = useAuth0();
@@ -34,14 +34,32 @@ const FormPost = (props) => {
 
       const response = await fetch(request);
       const responseData = await response.json();
-      const { message } = responseData;
+      const { success, message } = responseData;
+
+      if(!response.ok) {
+        throw Error('Could not post data.');                    
+      } else if(!success) {
+        throw Error(message);
+      }
 
       console.log(responseData);
+
       setMessage(message);
-      setStatus('error');
+      setStatus('success');
       form.reset();
+      setTimeout(() => {
+        setStatus(null);
+        setMessage(null);
+      }, 2000);
+
 
     } catch(err) {
+      setMessage(err.message);
+      setStatus('error');
+      setTimeout(() => {
+        setStatus(null);
+        setMessage(null);
+      }, 2000);      
       console.log(err);
     }
 
