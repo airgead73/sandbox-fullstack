@@ -9,9 +9,8 @@ const Landing = () => {
       <h2>projects page</h2>
       <Switch>
         {routesProjects.map((route) => (
-          <Route path={`${path}${route.path}`}>
-            <route.main/>
-          </Route>
+          <Route key={route.path} path={`${path}${route.path}`} component={route.main}/>
+          
         ))}
       </Switch>
 

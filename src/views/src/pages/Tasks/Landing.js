@@ -10,9 +10,7 @@ const Landing = () => {
       <h2>tasks page</h2>
       <Switch>
         {routesTasks.map((route) => (
-          <Route path={`${path}${route.path}`}>
-            <route.main/>
-          </Route>
+          <Route path={`${path}${route.path}`} component={route.main}/>
         ))}
       </Switch>      
     </React.Fragment>
