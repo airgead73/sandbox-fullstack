@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
-import useGet from '../../fetch/useGet';
-import { ListItem } from './index';
-import { InputText, InputNumber, BtnSubmit, FieldGroup, BtnGroup } from './../../components/forms';
-import { set } from 'mongoose';
+import { serverStem } from '../../config';
+import { useAuth0 } from '@auth0/auth0-react';
+import { InputText, BtnSubmit, FieldGroup, BtnGroup } from './../../components/forms';
+import { List } from '.';
 
-const Search = () => {
-  const [projects, setProjects] = useState(null);
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-
-  //const { data: projects, isLoading, error } = useGet('/api/projects');
+const Search = (props) => {
+  const [endpoint, setEndpoint] = useState(props.initial);
+  const path = props.initial;
 
   const getQueryString = (e) => {
     e.preventDefault();
     const form = e.target;
-    const fields = Array.from(form.querySelectorAll('.input__field'));
-    const path = '/api/projects';
+    const fields = Array.from(form.querySelectorAll('.input__field'));    
+
     let queryString = '?';
 
     fields.forEach((field) => {
@@ -31,35 +28,29 @@ const Search = () => {
     queryString = (path + queryString).slice(0, -1);
 
     console.log(queryString);
+    setEndpoint(queryString)
 
   }
 
   return (
     
     <section>
-      <h3>projects Search</h3>
-      {error && <p>{error}</p>}
-      {isLoading && <p>Loading...</p>}
-      <section>
-        <form onSubmit={getQueryString}>
-        <FieldGroup>
+      <h4>products search</h4>
+      <form onSubmit={getQueryString}>
+        <fieldset>
+          <legend>search projects</legend>
+          <FieldGroup>
         <InputText
             title="client"
-          />
-          <InputNumber
-            title="edition"
-          />           
-        </FieldGroup>
+          />          
+        </FieldGroup>   
         <BtnGroup>
           <BtnSubmit title="search"/>
-        </BtnGroup>        
-        </form>
-      </section>
-      {projects && <ul>
-        {projects.map((project) => (
-          <ListItem key={project._id} item={project}/>
-        ))}
-      </ul>}
+        </BtnGroup>               
+        </fieldset>
+
+      </form>
+      <List endpoint={endpoint}/>
     </section>
   )
 }

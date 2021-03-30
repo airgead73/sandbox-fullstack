@@ -2,9 +2,9 @@ import React from 'react';
 import { ListItem } from './index';
 import useGet from '../../fetch/useGet';
 
-const List = () => {
+const List = (props) => {
 
-  const { data: projects, isLoading, error } = useGet('/api/projects');
+  const { data: projects, isLoading, error } = useGet(`${props.endpoint}`);
 
   return (
     
