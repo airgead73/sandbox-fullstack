@@ -11,7 +11,7 @@ function App() {
       <Switch>
         {routesMain.map((route) => (
           <Route key={route.path} exact={route.exact} path={route.path}>
-            <route.main/>
+            <route.landing/>
           </Route>
         ))}
       </Switch>
