@@ -2,7 +2,7 @@ import React from 'react';
 
 const Update = () => {
   return ( 
-    <h2>update project</h2>
+    <h2>update milestone</h2>
    );
 }
  

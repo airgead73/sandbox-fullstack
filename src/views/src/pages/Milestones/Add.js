@@ -2,7 +2,7 @@ import React from 'react';
 
 const Add = () => {
   return ( 
-    <h3>add project</h3>
+    <h3>add milestone</h3>
    );
 }
  

@@ -2,7 +2,7 @@ import React from 'react';
 
 const List = () => {
   return ( 
-    <h3>project list</h3>
+    <h3>milestone list</h3>
    );
 }
  

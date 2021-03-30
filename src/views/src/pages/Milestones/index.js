@@ -6,10 +6,10 @@ import Detail from './Detail';
 import Update from './Update';
 
 export {
-  Landing as ProjectsLanding,
-  SideBar as ProjectsSidebar,
-  Add as ProjectsAdd,
-  List as ProjectsList,
-  Detail as ProjectsDetail,
-  Update as ProjectsUpdate
+  Landing as MilestonesLanding,
+  SideBar as MilestonesSidebar,
+  Add as MilestonesAdd,
+  List as MilestonesList,
+  Detail as MilestonesDetail,
+  Update as MilestonesUpdate
 }

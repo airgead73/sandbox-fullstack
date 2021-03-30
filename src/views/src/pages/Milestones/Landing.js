@@ -6,7 +6,7 @@ const Landing = () => {
   const { path } = useRouteMatch();
   return (
     <React.Fragment>
-      <h2>projects page</h2>
+      <h2>milestones page</h2>
       <Switch>
         {routesProjects.map((route) => (
           <Route key={route.path} path={`${path}${route.path}`} component={route.main}/>

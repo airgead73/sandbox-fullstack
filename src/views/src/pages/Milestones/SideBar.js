@@ -1,24 +1,23 @@
 import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 
-const projects = [
+const milestones = [
   {
     _id: 1,
     title: "Othello",
-    author: "William Shakespeare"
+    due: "March 15"
   },
   {
     _id: 2,
     title: "Casino Royale",
-    author: "Ian Fleming"
+    due: "March 25"
   }, 
   {
     _id: 3,
     title: "Dubliners",
-    author: "James Joyce"
+    due: "March 24"
   },   
-]
-
+];
 
 const SideBar = () => {
 
@@ -26,14 +25,14 @@ const SideBar = () => {
 
   return (
     <React.Fragment>
-      <h4>projects sidebar</h4>
+      <h4>milestones sidebar</h4>
       <ul>
-        <li><Link to={`${url}/add`}>add a project</Link></li>
-        <li><Link to={`${url}/list`}>review projects</Link></li>
+        <li><Link to={`${url}/add`}>add a milestone</Link></li>
+        <li><Link to={`${url}/list`}>review milestones</Link></li>
       </ul>
-      <h5>current projects</h5>
+      <h5>current milestones</h5>
         <ul>
-          {projects.map((project) => (<li key={project._id}><Link to={`${url}/detail/${project._id}`}>{project.title}</Link></li>))}
+          {milestones.map((milestone) => (<li key={milestone._id}><Link to={`${url}/detail/${milestone._id}`}>{milestone.title} <small>({milestone.due})</small></Link></li>))}
         </ul>
     </React.Fragment> 
    );
