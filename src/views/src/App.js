@@ -1,19 +1,10 @@
 import React from 'react';
-import { FetchProvider } from './contexts/FetchContext';
 
-function App() {  
+function App() { 
 
-  const { isLoading } = useAuth0();
+  return (    
 
-  if(isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  return (
-    
-    <FetchProvider>
-      <h1>application</h1>
-    </FetchProvider>
+      <h1>application</h1>   
   
   );
 
