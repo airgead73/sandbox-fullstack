@@ -9,6 +9,34 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 225px;
+  padding: 0 8px;
+  background-color: darkslategray;
+  color: white;
+}
+
+header h1 {
+  text-align: center;
+  color: white;
+  font-size: 1.25rem;
+}
+
+header a {
+  color: inherit;
+}
+
+nav h4 {
+  text-align: center;
+}
+
+main {
+  margin-left: 250px;
+}
+
 footer {
   position: fixed;
   bottom: 0;
