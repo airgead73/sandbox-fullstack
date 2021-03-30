@@ -3,8 +3,8 @@ import {
   MilestonesList,
   MilestonesDetail,
   MilestonesUpdate
- } from './../pages/Milestones';
-import { PageNotFound } from './../pages/PageNotFound';
+ } from '../pages/Milestones';
+import { PageNotFound } from '../pages/PageNotFound';
 
 const routesMilestones = [
   {

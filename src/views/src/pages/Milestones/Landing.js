@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
-import { routesProjects } from './../../routes';
+import { routesMilestones } from './../../routes';
 
 const Landing = () => {
   const { path } = useRouteMatch();
@@ -8,7 +8,7 @@ const Landing = () => {
     <React.Fragment>
       <h2>milestones page</h2>
       <Switch>
-        {routesProjects.map((route) => (
+        {routesMilestones.map((route) => (
           <Route key={route.path} path={`${path}${route.path}`} component={route.main}/>
           
         ))}
