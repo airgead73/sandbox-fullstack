@@ -1,6 +1,7 @@
 import { HomeLanding, HomeSidebar } from './../pages/Home';
 import { ProjectsLanding, ProjectsSidebar } from './../pages/Projects';
 import { TasksLanding, TasksSidebar } from './../pages/Tasks';
+import { PageNotFound, PageNotFoundSidebar } from './../pages/PageNotFound';
 
 const routesMain = [
   {
@@ -21,8 +22,8 @@ const routesMain = [
   },  
   {
     path: '*',
-    sidebar: () => <h4>sidebar not found</h4>,
-    landing: () => <h2>page not found</h2>
+    sidebar: () => <PageNotFoundSidebar/>,
+    landing: () => <PageNotFound/>
   },  
  
 ];

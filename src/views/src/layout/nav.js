@@ -11,14 +11,15 @@ const Nav = () => {
         <li><Link to="/tasks">tasks</Link></li>
       </ul> 
       <hr/> 
-        <Switch>
+      <aside>
+        <Switch>          
           {routesMain.map((route) => (
             <Route key={route.path} exact={route.exact} path={route.path}>
               <route.sidebar/>
             </Route>
-          ))}
+          ))}  
         </Switch>
-      
+      </aside>
     </nav>
    );
 }
