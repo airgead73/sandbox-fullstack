@@ -1,4 +1,6 @@
 import { HomeLanding, HomeSidebar } from './../pages/Home';
+import { ProjectsLanding, ProjectsSidebar } from './../pages/Projects';
+import { TasksLanding, TasksSidebar } from './../pages/Tasks';
 
 const routesMain = [
   {
@@ -9,13 +11,13 @@ const routesMain = [
   },
   {
     path: '/projects',
-    sidebar: () => <h4>projects sidebar</h4>,
-    landing: () => <h2>projects page</h2>
+    sidebar: () => <ProjectsSidebar/>,
+    landing: () => <ProjectsLanding/>
   },
   {
     path: '/tasks',
-    sidebar: () => <h4>tasks sidebar</h4>,
-    landing: () => <h2>tasks page</h2>
+    sidebar: () => <TasksSidebar/>,
+    landing: () => <TasksLanding/>
   },  
   {
     path: '*',

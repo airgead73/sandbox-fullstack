@@ -2,7 +2,7 @@ import React from 'react';
 
 const Landing = () => {
   return ( 
-    <h2>projects page</h2>
+    <h2>tasks page</h2>
    );
 }
  

@@ -2,6 +2,6 @@ import Landing from './Landing';
 import SideBar from './SideBar';
 
 export {
-  Landing as ProjectsLanding,
-  SideBar as ProjectsSidebar
+  Landing as TasksLanding,
+  SideBar as TasksSidebar
 }

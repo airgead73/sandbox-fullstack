@@ -2,7 +2,7 @@ import React from 'react';
 
 const SideBar = () => {
   return ( 
-    <h4>projects sidebar</h4>
+    <h4>tasks sidebar</h4>
    );
 }
  
