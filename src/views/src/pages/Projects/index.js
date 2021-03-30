@@ -4,6 +4,7 @@ import { List } from './List';
 import { ListItem } from './ListItem';
 import { Detail } from './Detail';
 import { Update } from './Update';
+import { Search } from './Search';
 
 
 export {
@@ -12,5 +13,6 @@ export {
   List,  
   ListItem,
   Detail,
-  Update
+  Update,
+  Search
 }

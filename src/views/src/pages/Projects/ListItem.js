@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BtnDelete } from '../../components/forms';
 
 const ListItem = ({ item }) => {
   return ( 
@@ -28,6 +29,12 @@ const ListItem = ({ item }) => {
               }}
             >update
             </Link>
+            &nbsp; | &nbsp;
+            <BtnDelete
+              title="delete"
+              item={item._id}
+              endpoint={`/api/projects/${item._id}`}
+            />
             </small>
           </li>
           </p>      

@@ -9,6 +9,7 @@ import TextArea from './TextArea';
 
 import BtnSubmit from './BtnSubmit';
 import BtnReset from './BtnReset';
+import BtnDelete from './BtnDelete';
 
 import FieldGroup from './FieldGroup';
 import BtnGroup from './BtnGroup';
@@ -17,6 +18,7 @@ export {
   FormPost,
   FormMessage,
   BtnSubmit,
+  BtnDelete,
   BtnReset,
   InputText,
   InputNumber,

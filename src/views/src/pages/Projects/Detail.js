@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { BtnDelete } from '../../components/forms';
 
 const Detail = () => {
   const location = useLocation();
@@ -22,6 +23,14 @@ const Detail = () => {
         }}
         >update project
         </Link>     
+    </p>
+    <p>
+    <BtnDelete
+      title="delete"
+      item={item._id}
+      endpoint={`/api/projects/${item._id}`}
+      return="/projects/list"
+    />
     </p>
     </article>
 
