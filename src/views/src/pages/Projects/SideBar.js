@@ -1,27 +1,9 @@
 import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
+import useFetch from './../../fetch/useFetch';
 
-const projects = [
-  {
-    _id: 1,
-    title: "Othello",
-    author: "William Shakespeare"
-  },
-  {
-    _id: 2,
-    title: "Casino Royale",
-    author: "Ian Fleming"
-  }, 
-  {
-    _id: 3,
-    title: "Dubliners",
-    author: "James Joyce"
-  },   
-]
-
-
-const SideBar = () => {
-
+const SideBar = (props) => {
+  const { data: projects, isLoading, error } = useFetch('/api/projects?client=zovio');
   const { url } = useRouteMatch();
 
   return (
@@ -32,9 +14,11 @@ const SideBar = () => {
         <li><Link to={`${url}/list`}>review projects</Link></li>
       </ul>
       <h5>current projects</h5>
-        <ul>
-          {projects.map((project) => (<li key={project._id}><Link to={`${url}/detail/${project._id}`}>{project.title}</Link></li>))}
-        </ul>
+      {error && <p>{error}</p>}
+      {isLoading && <p>loading...</p>}
+      {projects && <ul>
+          {projects.map((project) => (<li key={project._id}><Link to={`${url}/${project._id}/detail`}>{project.title}</Link></li>))}
+        </ul>}
     </React.Fragment> 
    );
 }

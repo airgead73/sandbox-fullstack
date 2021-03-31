@@ -25,6 +25,10 @@ header h1 {
   font-size: 1.25rem;
 }
 
+header p {
+  text-align: center;
+}
+
 header a {
   color: inherit;
 }
