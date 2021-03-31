@@ -17,7 +17,20 @@ const SideBar = (props) => {
       {error && <p>{error}</p>}
       {isLoading && <p>loading...</p>}
       {projects && <ul>
-          {projects.map((project) => (<li key={project._id}><Link to={`${url}/${project._id}/detail`}>{project.title}</Link></li>))}
+          {projects.map((project) => (
+            <li key={project._id}>
+              <Link 
+                to={{
+                  pathname: `${url}/${project._id}/detail`,
+                  state: {
+                    item: project
+                  }
+                }}
+                >
+                {project.title}
+              </Link>
+            </li>
+          ))}
         </ul>}
     </React.Fragment> 
    );
