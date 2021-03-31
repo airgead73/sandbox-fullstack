@@ -23,7 +23,7 @@ const SideBar = (props) => {
                 to={{
                   pathname: `${url}/${project._id}/detail`,
                   state: {
-                    item: project
+                    itemId: project._id
                   }
                 }}
                 >

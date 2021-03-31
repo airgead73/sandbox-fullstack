@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 import { serverStem } from './../../config';
 import { useAuth0 } from '@auth0/auth0-react';
 
@@ -7,6 +8,7 @@ const FormPost = (props) => {
   const [message, setMessage] = useState(null);
   const serverUrl = `${serverStem}${props.action}`;
   const { getAccessTokenSilently } = useAuth0();
+  const history = useHistory();
 
   const postApi = async (e) => {
     e.preventDefault();
@@ -33,7 +35,7 @@ const FormPost = (props) => {
 
       const response = await fetch(request);
       const responseData = await response.json();
-      const { success, message } = responseData;
+      const { results: item, success, message } = responseData;
 
       if(!response.ok) {
         throw Error('Could not post data.');                    
@@ -46,11 +48,7 @@ const FormPost = (props) => {
       setMessage(message);
       setStatus('success');
       form.reset();
-      setTimeout(() => {
-        setStatus(null);
-        setMessage(null);
-      }, 2000);
-
+      history.push(`${props.action}/${item._id}/detail`)
 
     } catch(err) {
       setMessage(err.message);

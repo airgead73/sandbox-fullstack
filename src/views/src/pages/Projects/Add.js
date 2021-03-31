@@ -30,9 +30,9 @@ const Add = () => {
       <FieldGroup>
         <TextArea title="notes"/>                                                
       </FieldGroup>
-        <BtnGroup>
-          <BtnSubmit title="add"/>
-        </BtnGroup>      
+      <BtnGroup>
+        <BtnSubmit title="add"/>
+      </BtnGroup>      
     </FormPost>
 
    );
