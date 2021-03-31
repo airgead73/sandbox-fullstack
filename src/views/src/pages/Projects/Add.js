@@ -15,13 +15,14 @@ const Add = () => {
     <FormPost
       method="POST"
       action="/api/projects"
+      target="/projects"
       enctype="application/json"
       title="add a project"    
     >
       <FieldGroup>
         <InputText title="title"/>
         <InputText title="author"/>           
-        </FieldGroup>
+      </FieldGroup>
       <FieldGroup>
         <InputText title="code"/>
         <InputNumber title="edition"/>

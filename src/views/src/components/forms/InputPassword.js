@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InputPassword = ({title}) => {
+const InputPassword = ({title, defaultValue}) => {
 
   return ( 
     <label htmlFor={title} className="input input--text">
@@ -10,6 +10,7 @@ const InputPassword = ({title}) => {
         name={title}
         id={title}
         className="input__field"
+        defaultValue={defaultValue}
       />
       <span className="input__message"></span>
     </label>

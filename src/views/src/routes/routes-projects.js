@@ -15,14 +15,14 @@ const routesProjects = [
   {
     path: '/list',
     main: () => <ProjectsList/>
-  },
+  }, 
   {
     path: '/:id/detail',
     main: () => <ProjectsDetail/>
   },  
   {
     path: '/:id/update',
-    landing: () => <ProjectsUpdate/>
+    main: () => <ProjectsUpdate/>
   },
   {
     path: '/*',

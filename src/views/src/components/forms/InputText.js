@@ -1,6 +1,7 @@
 import React from 'react';
 
-const InputText = ({title}) => {
+const InputText = (props) => {
+  const { title } = props
   
   return ( 
     <label htmlFor={title} className="input input--text">
@@ -10,6 +11,7 @@ const InputText = ({title}) => {
         name={title}
         id={title}
         className="input__field"
+        defaultValue={props.defaultValue}
       />
       <span className="input__message"></span>
     </label>

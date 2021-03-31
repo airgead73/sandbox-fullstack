@@ -35,7 +35,7 @@ const FormPost = (props) => {
 
       const response = await fetch(request);
       const responseData = await response.json();
-      const { results: item, success, message } = responseData;
+      const { project: item, success, message } = responseData;
 
       if(!response.ok) {
         throw Error('Could not post data.');                    
@@ -48,7 +48,7 @@ const FormPost = (props) => {
       setMessage(message);
       setStatus('success');
       form.reset();
-      history.push(`${props.action}/${item._id}/detail`)
+      history.push(`${props.target}/${item._id}/detail`)
 
     } catch(err) {
       setMessage(err.message);

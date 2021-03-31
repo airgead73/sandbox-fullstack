@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { routesPublic, routesProtected } from './routes';
-import Layout from './layout';
+import {Layout} from './layout';
 
 import { useAuth0 } from '@auth0/auth0-react';
 import { ProtectedRoute } from './auth';

@@ -3,6 +3,7 @@ import Header from './header';
 import Nav from './nav';
 import Main from './main';
 import Footer from './footer';
+import { LayoutContext } from './context';
 
 const Layout = (props) => {
   return ( 
@@ -18,4 +19,6 @@ const Layout = (props) => {
    );
 }
  
-export default Layout;
+export {
+  Layout
+};

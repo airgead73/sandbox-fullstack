@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TextArea = ({title}) => {
+const TextArea = ({title, defaultValue}) => {
   
   return ( 
     <label htmlFor={title} className="input input--textarea">
@@ -10,6 +10,7 @@ const TextArea = ({title}) => {
         name={title}
         id={title}
         className="input__field"
+        defaultValue={defaultValue}
       ></textarea>
       <span className="input__message"></span>
     </label>
