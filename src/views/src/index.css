@@ -47,3 +47,90 @@ footer {
   right: 0;
 }
 
+/* forms */
+
+form {
+  position: relative;
+}
+
+fieldset {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-style: solid;
+  border-color: darkslategray;
+}
+
+.fieldgroup {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+
+}
+
+.input {
+  display: block;
+  flex: auto;
+  padding: 8px;
+}
+
+.input__title {
+  display: block;
+  margin-bottom: 3px;
+  color: darkslategray;
+}
+
+.input__field {
+  display: block;
+  width: 100%;
+  line-height: 3;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.input--textarea textarea {
+  height: 100px;
+}
+
+.btngroup {
+  text-align: center;
+}
+
+form legend {
+  background-color: darkslategray;
+  color: white;
+  padding: 10px 12px;
+}
+
+form button {
+  padding: 10px 25px;
+  font-size: 1rem;
+  background-color: darkslategray;
+  color: white;
+  border-color: darkslategray;
+}
+
+
+.message {
+  display: block;
+  position: absolute;
+  top: 100px;
+  left: 10px;
+  right: 10px;
+  padding: 40px;
+  font-size: 1.5rem;
+  text-align: center;  
+}
+
+.message--success {
+  background-color: green;
+  color: white;
+}
+
+.message--error {
+  background-color: red;
+  color: white;
+}
+
+
