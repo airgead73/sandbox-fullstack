@@ -1,6 +1,6 @@
 import { HomeLanding, HomeSidebar } from './../pages/Home';
 import { ProjectsLanding, ProjectsSidebar } from './../pages/Projects';
-import { TasksLanding, TasksSidebar } from './../pages/Tasks';
+import { TasksLanding, TasksSidebar } from '../pages/Photos';
 import { MilestonesLanding, MilestonesSidebar } from './../pages/Milestones';
 import { PageNotFound, PageNotFoundSidebar } from './../pages/PageNotFound';
 

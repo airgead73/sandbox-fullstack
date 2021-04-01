@@ -3,7 +3,7 @@ import {
   TasksList,
   TasksDetail,
   TasksUpdate
- } from './../pages/Tasks';
+ } from '../pages/Photos';
 import { PageNotFound } from './../pages/PageNotFound';
 
 const routesTasks = [
