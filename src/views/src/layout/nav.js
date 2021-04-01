@@ -4,7 +4,7 @@ import { routesMain } from './../routes';
 
 const Nav = ({layout}) => {
   return ( 
-    <nav className={layout}>
+    <nav className={`nav nav--${layout}`}>
       <ul>
         <li><Link to="/">home</Link></li>
         <li><Link to="/projects">projects</Link></li>
