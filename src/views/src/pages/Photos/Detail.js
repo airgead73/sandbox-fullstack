@@ -4,7 +4,7 @@ import { useLayout } from '../../layout';
 const Detail = () => {
   useLayout('detail');
   return ( 
-    <h2>task detail</h2>
+    <h2>photo detail</h2>
    );
 }
  

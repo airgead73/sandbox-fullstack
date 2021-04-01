@@ -6,10 +6,10 @@ import Detail from './Detail';
 import Update from './Update';
 
 export {
-  Landing as TasksLanding,
-  SideBar as TasksSidebar,
-  Add as TasksAdd,
-  List as TasksList,
-  Detail as TasksDetail,
-  Update as TasksUpdate
+  Landing as PhotosLanding,
+  SideBar as PhotosSidebar,
+  Add as PhotosAdd,
+  List as PhotosList,
+  Detail as PhotosDetail,
+  Update as PhotosUpdate
 }

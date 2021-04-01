@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
-import { routesTasks } from './../../routes';
+import { routesPhotos } from './../../routes';
 import { useLayout } from './../../layout';
 
 const Landing = () => {
@@ -9,9 +9,9 @@ const Landing = () => {
 
   return ( 
     <React.Fragment>
-      <h2>tasks page</h2>
+      <h2>photos page</h2>
       <Switch>
-        {routesTasks.map((route) => (
+        {routesPhotos.map((route) => (
           <Route path={`${path}${route.path}`} component={route.main}/>
         ))}
       </Switch>      

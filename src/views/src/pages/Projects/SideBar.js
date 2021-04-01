@@ -3,7 +3,7 @@ import { Link, useRouteMatch } from 'react-router-dom';
 import useFetch from './../../fetch/useFetch';
 
 const SideBar = (props) => {
-  const { data: projects, isLoading, error } = useFetch('/api/projects?client=zovio');
+  const { data: projects, isLoading, error } = useFetch('/api/projects');
   const { url } = useRouteMatch();
 
   return (

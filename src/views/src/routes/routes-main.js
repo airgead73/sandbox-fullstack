@@ -1,7 +1,6 @@
 import { HomeLanding, HomeSidebar } from './../pages/Home';
 import { ProjectsLanding, ProjectsSidebar } from './../pages/Projects';
-import { TasksLanding, TasksSidebar } from '../pages/Photos';
-import { MilestonesLanding, MilestonesSidebar } from './../pages/Milestones';
+import { PhotosLanding, PhotosSidebar } from '../pages/Photos';
 import { PageNotFound, PageNotFoundSidebar } from './../pages/PageNotFound';
 
 const routesMain = [
@@ -17,14 +16,9 @@ const routesMain = [
     landing: () => <ProjectsLanding/>
   },
   {
-    path: '/tasks',
-    sidebar: () => <TasksSidebar/>,
-    landing: () => <TasksLanding/>
-  }, 
-  {
-    path: '/milestones',
-    sidebar: () => <MilestonesSidebar/>,
-    landing: () => <MilestonesLanding/>
+    path: '/photos',
+    sidebar: () => <PhotosSidebar/>,
+    landing: () => <PhotosLanding/>
   },    
   {
     path: '*',
