@@ -8,7 +8,6 @@ import {
   BtnGroup,
   BtnSubmit,
   InputText,
-  InputNumber,
   TextArea 
 } from './../../components/forms';
 
@@ -16,8 +15,7 @@ const Update = () => {
   useLayout('update');
   const { id } = useParams();
   const { data: item, isLoading, error } = useFetch(`/api/projects/${id}`);  
-  console.log(id);
-  console.log(item)
+
   return ( 
     <React.Fragment>
       {isLoading && <div>loading...</div>}
@@ -33,14 +31,14 @@ const Update = () => {
       >
         <FieldGroup>
           <InputText title="title" defaultValue={item.title}/>
-          <InputText title="author" defaultValue={item.author}/>           
+          <InputText title="mode" defaultValue={item.mode}/>           
         </FieldGroup>
         <FieldGroup>
-          <InputText title="code" defaultValue={item.code}/>
-          <InputNumber title="edition" defaultValue={item.edition}/>
-          <InputText title="client" defaultValue={item.client}/>
+          <InputText title="material" defaultValue={item.material}/>
+          <InputText title="category" defaultValue={item.category}/>
         </FieldGroup>        
         <FieldGroup>
+          <TextArea title="desc" defaultValue={item.desc}/> 
           <TextArea title="notes" defaultValue={item.notes}/>                                                
         </FieldGroup>  
         <BtnGroup>

@@ -79,20 +79,20 @@ exports.update = asyncHandler(async function(req, res, next) {
   // build fields
   const {
     title,
-    code,
-    client,
-    edition,
-    author,
+    category,
+    mode,
+    material,
+    desc,
     notes
   } = req.body;
 
   const projectFields = {};
 
   if(title) projectFields.title = title;
-  if(code) projectFields.code = code;
-  if(client) projectFields.client = client;
-  if(edition) projectFields.edition = edition;
-  if(author) projectFields.author = author;
+  if(category) projectFields.category = category;
+  if(mode) projectFields.mode = mode;
+  if(material) projectFields.material = material;
+  if(desc) projectFields.notes = notes;
   if(notes) projectFields.notes = notes;
   
 

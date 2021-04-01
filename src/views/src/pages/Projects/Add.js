@@ -6,7 +6,6 @@ import {
   BtnGroup,
   BtnSubmit,
   InputText,
-  InputNumber,
   TextArea 
 } from './../../components/forms';
 
@@ -25,14 +24,14 @@ const Add = () => {
     >
       <FieldGroup>
         <InputText title="title"/>
-        <InputText title="author"/>           
+        <InputText title="mode"/>           
       </FieldGroup>
       <FieldGroup>
-        <InputText title="code"/>
-        <InputNumber title="edition"/>
-        <InputText title="client"/>
+        <InputText title="material"/>
+        <InputText title="category"/>
       </FieldGroup>        
       <FieldGroup>
+        <TextArea title="desc"/>
         <TextArea title="notes"/>                                                
       </FieldGroup>
       <BtnGroup>

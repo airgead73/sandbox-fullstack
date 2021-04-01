@@ -16,10 +16,9 @@ const Detail = () => {
       {error && <div>error</div>}
       {item && <article>
         <h3>project detail</h3>
-        <h4>{item.title}</h4>
-        <p>by {item.author}</p>
-        <p>
-        <Link 
+        <h4>{item.title} | &nbsp;
+          
+          <Link 
           key={`update_${item._id}`} 
           to={{
             pathname: `/projects/${item._id}/update`,
@@ -27,8 +26,23 @@ const Detail = () => {
               item: item
               }
           }}
-        >update project
-        </Link>     
+        >update
+        </Link> 
+          
+        </h4>
+        <ul>
+          <li>
+            <p>{item.mode}</p>
+          </li>
+          <li>
+            <p>{item.material}</p>
+          </li>
+          <li>
+            <p>{item.category}</p>
+          </li>
+        </ul>
+        <p>
+    
       </p>
       </article>}
     </React.Fragment>
