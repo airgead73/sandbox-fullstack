@@ -2,9 +2,9 @@ import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import { routesMain } from './../routes';
 
-const Nav = () => {
+const Nav = ({layout}) => {
   return ( 
-    <nav>
+    <nav className={layout}>
       <ul>
         <li><Link to="/">home</Link></li>
         <li><Link to="/projects">projects</Link></li>
@@ -12,7 +12,7 @@ const Nav = () => {
         <li><Link to="/milestones">milestones</Link></li>
       </ul> 
       <hr/> 
-      <aside>
+      <aside className={layout}>
         <Switch>          
           {routesMain.map((route) => (
             <Route key={route.path} exact={route.exact} path={route.path}>

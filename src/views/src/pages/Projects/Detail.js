@@ -1,25 +1,21 @@
 import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import useFetch from './../../fetch/useFetch';
-import { LayoutContext } from './../../layout';
+import { useLayout } from './../../layout';
 
 const Detail = () => {
 
   const { id } = useParams();
   const { data: item, isLoading, error } = useFetch(`/api/projects/${id}`);
-  const layout = React.useContext(LayoutContext);
-  const { currentLayout, changeLayout } = layout;
 
-  useEffect(() => {
-    changeLayout('detail')
-  },[])
+  useLayout('detail');
 
   return ( 
     <React.Fragment>
       {isLoading && <div>loading...</div>}
       {error && <div>error</div>}
       {item && <article>
-        <h3 className={currentLayout}>project detail</h3>
+        <h3>project detail</h3>
         <h4>{item.title}</h4>
         <p>by {item.author}</p>
         <p>

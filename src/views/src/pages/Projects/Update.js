@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { useLayout } from './../../layout';
 import useFetch from './../../fetch/useFetch';
 import {   
   FormPost, 
@@ -12,6 +13,7 @@ import {
 } from './../../components/forms';
 
 const Update = () => {
+  useLayout('update');
   const { id } = useParams();
   const { data: item, isLoading, error } = useFetch(`/api/projects/${id}`);  
   console.log(id);

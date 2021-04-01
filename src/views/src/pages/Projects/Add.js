@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLayout } from './../../layout';
 import {   
   FormPost, 
   FieldGroup,
@@ -10,6 +11,9 @@ import {
 } from './../../components/forms';
 
 const Add = () => {
+
+  useLayout('add');
+
   return ( 
     
     <FormPost

@@ -3,22 +3,28 @@ import Header from './header';
 import Nav from './nav';
 import Main from './main';
 import Footer from './footer';
-import { LayoutContext } from './context';
+import { LayoutContext, LayoutProvider } from './context';
+import { useLayout } from './useLayout';
 
 const Layout = (props) => {
+  const layout = React.useContext(LayoutContext);
+  const { currentLayout } = layout;
   return ( 
     <React.Fragment>
-      <Header>
-        <Nav/>
+      <Header layout={currentLayout}>
+        <Nav layout={currentLayout}/>
       </Header>
-      <Main>
+      <Main layout={currentLayout}>
         {props.children}
       </Main>
-      <Footer/>
+      <Footer layout={currentLayout}/>
     </React.Fragment>
    );
 }
  
 export {
-  Layout
+  Layout,
+  LayoutContext,
+  LayoutProvider,
+  useLayout
 };

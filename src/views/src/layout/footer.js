@@ -1,11 +1,8 @@
 import React from 'react';
-import { LayoutContext } from './context';
 
-const Footer = () => {
-  const layout = React.useContext(LayoutContext);
-  const { currentLayout } = layout;  
+const Footer = ({layout}) => {
   return ( 
-    <footer className={currentLayout}>
+    <footer className={layout}>
       <p><small>&copy; 2021</small></p>
     </footer>
    );
