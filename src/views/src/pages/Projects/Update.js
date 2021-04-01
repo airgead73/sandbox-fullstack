@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useLayout } from './../../layout';
 import useFetch from './../../fetch/useFetch';
 import {   

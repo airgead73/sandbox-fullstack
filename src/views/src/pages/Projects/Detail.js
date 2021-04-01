@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import useFetch from './../../fetch/useFetch';
 import { useLayout } from './../../layout';
