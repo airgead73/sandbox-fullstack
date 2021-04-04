@@ -31,6 +31,7 @@ body {
   padding: 5px 8px;
   background-color: #4a4a4a;
   color: #f0f0f0;
+  z-index: 1;
 }
 
 .header__title {
@@ -94,7 +95,126 @@ body {
   width: 150px;
   background-color: #f0f0f0;
   padding-top: 50px;
-  z-index: -1;
+}
+
+.form {
+  width: 95%;
+}
+
+.form__border {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: dimgray;
+}
+
+.form__title {
+  background-color: dimgray;
+  color: #f0f0f0;
+  line-height: 2.25;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.form--narrow {
+  max-width: 600px;
+}
+
+.form--medium {
+  max-width: 750px;
+}
+
+.field-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 30px;
+}
+
+.btn-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #f0f0f0;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.btn-group button {
+  display: block;
+  width: 75px;
+  border: none;
+  border-radius: 0;
+  background-color: dimgray;
+  color: #f0f0f0;
+  line-height: 2;
+}
+
+.btn-group button:first-child {
+  margin-right: 1px;
+}
+
+.btn-group button:hover {
+  background-color: #f0f0f0;
+  color: dimgray;
+  cursor: pointer;
+}
+
+.field {
+  position: relative;
+  display: block;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  font-size: .9rem;
+  padding-top: 5px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.field__title {
+  display: block;
+  color: dimgray;
+}
+
+.field__content {
+  display: block;
+  width: 100%;
+  font-size: .9rem;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f0f0f0;
+}
+
+.field__content:focus {
+  outline-color: dimgray;
+}
+
+.field__msg {
+  position: absolute;
+  display: none;
+  font-size: .75rem;
 }
 
 .btn {

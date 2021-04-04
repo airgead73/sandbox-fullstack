@@ -2,7 +2,7 @@ import React from 'react';
 
 const FieldGroup = ({children}) => {
   return ( 
-    <section className="fieldgroup">
+    <section className="field-group">
       {children}
     </section>
    );

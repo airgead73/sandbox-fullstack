@@ -3,16 +3,16 @@ import React from 'react';
 const InputPassword = ({title, defaultValue}) => {
 
   return ( 
-    <label htmlFor={title} className="input input--text">
-      <span className="input__title">{title}</span>
+    <label htmlFor={title} className="field" data-status="initial">
+      <span className="field__title">{title}</span>
       <input 
         type="password"
         name={title}
         id={title}
-        className="input__field"
+        className="field__content field--password"
         defaultValue={defaultValue}
       />
-      <span className="input__message"></span>
+      <span className="field__msg"></span>
     </label>
    );
 }

@@ -65,9 +65,11 @@ const FormPost = (props) => {
   return ( 
     <form 
       onSubmit={postApi}
+      className={`form form--${props.size}`}
+      status="initial"
     >      
-      <fieldset>
-        <legend>{props.title}</legend>
+      <fieldset className="form__border">
+        <legend className="form__title">{props.title}</legend>
         {props.children}
       </fieldset>
       

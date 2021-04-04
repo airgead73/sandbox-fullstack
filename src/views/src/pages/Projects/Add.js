@@ -20,7 +20,8 @@ const Add = () => {
       action="/api/projects"
       target="/projects"
       enctype="application/json"
-      title="add a project"    
+      title="add a project"
+      status="initial"    
     >
       <FieldGroup>
         <InputText title="title"/>

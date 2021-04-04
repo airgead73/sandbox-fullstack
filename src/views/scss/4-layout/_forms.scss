@@ -1,0 +1,115 @@
+.form {
+  width: 95%;
+  &__border {
+    padding: {
+      top: 20px;
+      bottom: 20px;
+      right: 20px;
+      left: 20px;
+    }
+    border: {
+      style: solid;
+      width: 1px;
+      color: $primary;
+    }
+  }
+  &__title {
+    background-color: $primary;
+    color: $white;
+    line-height: 2.25;
+    padding: {
+      left: 12px;
+      right: 12px;
+    }
+  }
+  &--narrow {
+    max-width: 600px;
+  }
+  &--medium {
+    max-width: 750px;
+  }
+}
+
+.field-group {
+  display: flex;
+  flex-direction: row;
+  margin: {
+    bottom: 30px;
+  }
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-top: {
+    style: solid;
+    width: 1px;
+    color: $white;
+    
+  }
+  margin: {
+    top: 40px;
+  }
+  padding: {
+    top: 20px;
+  }
+  & button {
+    display: block;
+    width: 75px;
+    border: none;
+    border-radius: 0;
+    background-color: $primary;
+    color: $white;
+    line-height: 2;
+    &:first-child {
+      margin-right: 1px;
+    }
+    &:hover {
+      background-color: $white;
+      color: $primary;
+      cursor: pointer;
+    }
+  }
+}
+
+.field {
+  position: relative;
+  display: block;
+  flex: auto;
+  font-size: .9rem;
+  padding: {
+    top: 5px;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+  }
+  &__title {
+    display: block;
+    color: $primary;
+  }
+  &__content {
+    display: block;
+    width: 100%;
+    font-size: .9rem;
+    padding: {
+      left: 8px;
+      right: 8px;
+      top: 8px;
+      bottom: 8px;
+    }
+    border: {
+      width: 1px;
+      style: solid;
+      color: $white;
+    }
+    &:focus {
+      outline-color: $primary;
+    }
+  }
+  &__msg {
+    position: absolute;
+    display: none;
+    font-size: .75rem;
+  }
+}

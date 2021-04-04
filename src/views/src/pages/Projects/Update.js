@@ -27,7 +27,8 @@ const Update = () => {
         action={`/api/projects/${id}`}
         target="/projects"
         enctype="application/json"
-        title={`Update ${item.title}`}    
+        title={`Update ${item.title}`} 
+        status="initial"   
       >
         <FieldGroup>
           <InputText title="title" defaultValue={item.title}/>
