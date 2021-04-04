@@ -13,10 +13,17 @@
     display: inline-block;
     text-decoration: none;
     color: inherit;
-    &:hover {}
+    border: $primary-darkest 2px dotted;
+    transition: .27s;
+    &:hover {
+      border-bottom-color: $primary-lightest;
+    }
     &:focus {
+      border-color: $primary-lightest;
       outline: none;
     }
-    &:active {}
+    &:active {
+      border-style: solid;
+    }
   }
 }

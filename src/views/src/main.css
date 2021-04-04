@@ -29,6 +29,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 5px 8px;
+  background-color: #4a4a4a;
+  color: #f0f0f0;
 }
 
 .header__title {
@@ -57,10 +59,22 @@ body {
   display: inline-block;
   text-decoration: none;
   color: inherit;
+  border: #4a4a4a 2px dotted;
+  -webkit-transition: .27s;
+  transition: .27s;
+}
+
+.nav__link:hover {
+  border-bottom-color: #969696;
 }
 
 .nav__link:focus {
+  border-color: #969696;
   outline: none;
+}
+
+.nav__link:active {
+  border-style: solid;
 }
 
 .main {
