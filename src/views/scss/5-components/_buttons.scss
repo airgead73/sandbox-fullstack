@@ -1,0 +1,33 @@
+.btn {
+  display: inline-flex;
+  border: none;
+  outline: none;
+  height: 40px;
+  border-radius: $radius;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: $primary;
+  color: $white;
+  &:hover {
+    background-color: $primary-darker;
+  }
+  &:active {
+    background-color: $primary-darkest;
+  }
+  &__text {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 100%;
+  }
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 100%;
+    font-size: 1.5em;
+    background-color: rgba(0,0,0,.08);
+  }
+}

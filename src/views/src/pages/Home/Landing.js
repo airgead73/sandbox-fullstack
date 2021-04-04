@@ -6,7 +6,7 @@ const Landing = () => {
 useLayout('landing');
   
   return (  
-    <h2>home page</h2>
+    <h2 className="main__title">home page</h2>
    );
 }
  
