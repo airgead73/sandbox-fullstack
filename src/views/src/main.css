@@ -63,6 +63,15 @@ body {
   outline: none;
 }
 
+.main {
+  padding: 50px;
+  padding-left: 180px;
+}
+
+.main__title {
+  margin-top: 0;
+}
+
 .btn {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;

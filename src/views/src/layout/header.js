@@ -5,7 +5,7 @@ const Header = ({layout, children}) => {
 
   return ( 
     <header className={`header header--${layout}`}>
-      <h1 class="header__title">portfolio</h1>      
+      <h1 className="header__title">portfolio</h1>      
       {children}
       <AuthenticationButton/>
     </header>
