@@ -16,7 +16,7 @@ const SideBar = (props) => {
       <h5 className="sidebar__subtitle">current projects</h5>
       {error && <p>{error}</p>}
       {isLoading && <p>loading...</p>}
-      {projects && <ul className="sidebar__list">
+      {projects && <ul className="sidebar__list list--secondary">
           {projects.map((project) => (
             <li key={project._id} className="sidebar__item">
               <Link
