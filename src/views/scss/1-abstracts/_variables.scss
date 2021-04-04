@@ -1,0 +1,19 @@
+$primary: dimgray;
+$primary-darker: mix(black, $primary, 10%);
+$primary-darkest: mix(black, $primary, 30%);
+$primary-lighter: mix(white, $primary, 10%);
+$primary-lightest: mix(white, $primary, 30%);
+
+$white: mix(white, $primary, 90%);
+
+// TYPE
+
+$standard: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+sans-serif;
+$headings: $standard;
+$body: $standard;
+
+$landingwidth: 150px;
+
+$radius: 2px;
