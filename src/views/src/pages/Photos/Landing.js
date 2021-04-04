@@ -12,7 +12,7 @@ const Landing = () => {
       <h2 className="main__title">photos page</h2>
       <Switch>
         {routesPhotos.map((route) => (
-          <Route path={`${path}${route.path}`} component={route.main}/>
+          <Route key={route.path} path={`${path}${route.path}`} component={route.main}/>
         ))}
       </Switch>      
     </React.Fragment>

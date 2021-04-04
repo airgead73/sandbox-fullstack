@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './header';
 import Nav from './nav';
+import Sidebar from './sidebar';
 import Main from './main';
 import Footer from './footer';
 import { LayoutContext, LayoutProvider } from './context';
@@ -15,6 +16,7 @@ const Layout = (props) => {
         <Nav layout={currentLayout}/>
       </Header>
       <Main layout={currentLayout}>
+        <Sidebar layout={currentLayout}/>
         {props.children}
       </Main>
       <Footer layout={currentLayout}/>

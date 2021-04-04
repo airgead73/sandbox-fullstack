@@ -8,18 +8,19 @@ const SideBar = (props) => {
 
   return (
     <React.Fragment>
-      <h4>projects sidebar</h4>
-      <ul>
-        <li><Link to={`${url}/add`}>add a project</Link></li>
-        <li><Link to={`${url}/list`}>review projects</Link></li>
+      <h4 className="sidebar__title">projects sidebar</h4>
+      <ul className="sidebar__list">
+        <li className="sidebar__item"><Link className="sidebar__link" to={`${url}/add`}>add a project</Link></li>
+        <li className="sidebar__item"><Link className="sidebar__link" to={`${url}/list`}>review projects</Link></li>
       </ul>
-      <h5>current projects</h5>
+      <h5 className="sidebar__subtitle">current projects</h5>
       {error && <p>{error}</p>}
       {isLoading && <p>loading...</p>}
-      {projects && <ul>
+      {projects && <ul className="sidebar__list">
           {projects.map((project) => (
-            <li key={project._id}>
-              <Link 
+            <li key={project._id} className="sidebar__item">
+              <Link
+                className="sidebar__link" 
                 to={{
                   pathname: `${url}/${project._id}/detail`,
                   state: {
