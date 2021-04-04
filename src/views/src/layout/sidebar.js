@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { routesMain } from './../routes';
 
-const SideBar = ({layout, children}) => {
+const SideBar = ({layout}) => {
   return ( 
     <aside className={`sidebar sidebar--${layout}`}>
       <Switch>          

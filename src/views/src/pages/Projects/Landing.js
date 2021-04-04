@@ -8,7 +8,6 @@ const Landing = () => {
   useLayout('landing');
   return (
     <React.Fragment>
-      <h2 className="main__title">projects page</h2>
       <Switch>
         {routesProjects.map((route) => (
           <Route key={route.path} path={`${path}${route.path}`} component={route.main}/>

@@ -5,6 +5,7 @@ import {
   FieldGroup,
   BtnGroup,
   BtnSubmit,
+  BtnReset,
   InputText,
   TextArea 
 } from './../../components/forms';
@@ -21,13 +22,15 @@ const Add = () => {
       target="/projects"
       enctype="application/json"
       title="add a project"
-      status="initial"    
+      status="initial"
+      size="large"    
     >
       <FieldGroup>
         <InputText title="title"/>
-        <InputText title="mode"/>           
+                 
       </FieldGroup>
       <FieldGroup>
+      <InputText title="mode"/>  
         <InputText title="material"/>
         <InputText title="category"/>
       </FieldGroup>        
@@ -37,6 +40,7 @@ const Add = () => {
       </FieldGroup>
       <BtnGroup>
         <BtnSubmit title="add"/>
+        <BtnReset title="reset"/>
       </BtnGroup>      
     </FormPost>
 

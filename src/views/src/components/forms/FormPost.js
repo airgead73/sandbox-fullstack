@@ -13,7 +13,7 @@ const FormPost = (props) => {
   const postApi = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const fields = Array.from(form.querySelectorAll('.input__field'));
+    const fields = Array.from(form.querySelectorAll('.field__content'));
     const collectedFields = {};
 
     fields.forEach((field) => {

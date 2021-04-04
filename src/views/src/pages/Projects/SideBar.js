@@ -8,7 +8,7 @@ const SideBar = (props) => {
 
   return (
     <React.Fragment>
-      <h4 className="sidebar__title">projects sidebar</h4>
+      <h4 className="sidebar__title">projects</h4>
       <ul className="sidebar__list">
         <li className="sidebar__item"><Link className="sidebar__link" to={`${url}/add`}>add a project</Link></li>
         <li className="sidebar__item"><Link className="sidebar__link" to={`${url}/list`}>review projects</Link></li>

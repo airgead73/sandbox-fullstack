@@ -6,4 +6,34 @@
   width: $landingwidth;
   background-color: $white;
   padding-top: 50px;
+  &__title {
+    padding-left: 8px;
+  }
+  &__list {
+    list-style-type: none;
+    margin: {
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+    padding: 0;
+  }
+  &__link {
+    text-decoration: none;
+    color: inherit;
+  }
+  &__item {
+    padding-left: 8px;
+  }
+  &__subtitle {
+    border-top: 1px solid $primary-lightest;
+    padding-left: 8px;
+    margin: {
+      left: auto;
+      right: auto;
+      bottom: 0;
+    }
+    padding-top: 12px;
+  }
 }

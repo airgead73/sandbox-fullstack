@@ -97,6 +97,37 @@ body {
   padding-top: 50px;
 }
 
+.sidebar__title {
+  padding-left: 8px;
+}
+
+.sidebar__list {
+  list-style-type: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0;
+}
+
+.sidebar__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidebar__item {
+  padding-left: 8px;
+}
+
+.sidebar__subtitle {
+  border-top: 1px solid #969696;
+  padding-left: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  padding-top: 12px;
+}
+
 .form {
   width: 95%;
 }
@@ -127,6 +158,10 @@ body {
   max-width: 750px;
 }
 
+.form--large {
+  max-width: 960px;
+}
+
 .field-group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -153,27 +188,16 @@ body {
   border-top-width: 1px;
   border-top-color: #f0f0f0;
   margin-top: 40px;
-  padding-top: 20px;
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
 
 .btn-group button {
-  display: block;
-  width: 75px;
-  border: none;
-  border-radius: 0;
-  background-color: dimgray;
-  color: #f0f0f0;
-  line-height: 2;
+  margin-right: 5px;
 }
 
-.btn-group button:first-child {
-  margin-right: 1px;
-}
-
-.btn-group button:hover {
-  background-color: #f0f0f0;
-  color: dimgray;
-  cursor: pointer;
+.btn-group button:last-child {
+  margin-right: 0;
 }
 
 .field {
@@ -200,15 +224,19 @@ body {
   font-size: .9rem;
   padding-left: 8px;
   padding-right: 8px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 16px;
+  padding-bottom: 16px;
   border-width: 1px;
   border-style: solid;
-  border-color: #f0f0f0;
+  border-color: #969696;
 }
 
 .field__content:focus {
   outline-color: dimgray;
+}
+
+.field--textarea {
+  min-height: 125px;
 }
 
 .field__msg {
