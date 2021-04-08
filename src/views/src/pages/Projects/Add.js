@@ -1,4 +1,5 @@
 import React from 'react';
+import { Form, InputText, BtnSubmit } from '../../components/forms';
 import { useLayout } from './../../hooks';
 
 const Add = () => {
@@ -7,7 +8,17 @@ const Add = () => {
 
   return ( 
     
-    <h2>add project</h2>
+    <Form
+      method="POST"
+      action="/api/projects"
+      name="project__add"
+      size="large"
+      title="add project"
+    >
+      <InputText title="project name"/>
+      <BtnSubmit title="add"/>
+
+    </Form>
 
    );
 }

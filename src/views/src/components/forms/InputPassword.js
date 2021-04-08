@@ -1,18 +1,38 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { FormContext } from './../../contexts';
 
-const InputPassword = ({title, defaultValue}) => {
+const InputPassword = (props) => {
+  const { title } = props;
+  const { formStatus } = useContext(FormContext);
 
+  const [fieldValue, setFieldValue] = useState('');
+  const [fieldStatus, setFieldStatus] = useState('initial');
+  const [fieldMsg, setFieldMsg] = useState(null);
+
+  useEffect(() => {
+
+    if(formStatus === 'success') {
+      setFieldValue('');
+    }
+
+  },[formStatus])
   return ( 
-    <label htmlFor={title} className="field" data-status="initial">
+    <label 
+      htmlFor={title} 
+      className="field" 
+      data-status-form={formStatus}
+      data-status-field={fieldStatus}
+    >     
       <span className="field__title">{title}</span>
       <input 
         type="password"
         name={title}
         id={title}
         className="field__content field--password"
-        defaultValue={defaultValue}
+        value={fieldValue}
+        onChange={(e) => setFieldValue(e.target.value)}
       />
-      <span className="field__msg"></span>
+      {fieldMsg && (<span className="field__msg">{fieldMsg}</span>)}
     </label>
    );
 }

@@ -1,5 +1,5 @@
 import { useLayout } from './useLayout';
-import useGet from './useFetch';
+import useGet from './useGet';
 
 export {
   useLayout,

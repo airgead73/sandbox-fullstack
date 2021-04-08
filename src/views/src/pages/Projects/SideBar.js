@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
-import useFetch from '../../hooks/useFetch';
+import {useGet} from './../../hooks';
 
 const SideBar = (props) => {
-  const { data: projects, isLoading, error } = useFetch('/api/projects');
+  const { data: projects, isLoading, error } = useGet('/api/projects');
   const { url } = useRouteMatch();
 
   return (

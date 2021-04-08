@@ -12,7 +12,7 @@ const FormProvider = ({children}) => {
   return (
     <Provider
       value={{
-        currentFormStatus: formStatus,
+        formStatus: formStatus,
         changeFormStatus,
         serverStem
       }}

@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import useFetch from '../../hooks/useFetch';
-import { useLayout } from './../../hooks';
+import {useGet, useLayout } from '../../hooks';
 
 const Detail = () => {
 
   const { id } = useParams();
-  const { data: item, isLoading, error } = useFetch(`/api/projects/${id}`);
+  const { data: item, isLoading, error } = useGet(`/api/projects/${id}`);
 
   useLayout('detail');
 

@@ -1,20 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { FormContext } from './../../contexts';
 
 
 const FormPost = (props) => {
+  const { changeFormStatus } = useContext(FormContext);
   const {
     action, 
     children,
     method,
     name,
     size, 
-    title, 
-    children } = props;
+    title
+  } = props;
 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const form = e.target;
+    changeFormStatus('submitted');
   }
 
   return ( 

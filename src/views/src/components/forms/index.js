@@ -1,5 +1,5 @@
+import Form from './Form';
 import InputText from './InputText';
-import InputTest from './InputTest';
 import InputNumber from './InputNumber';
 import InputEmail from './InputEmail';
 import InputPassword from './InputPassword';
@@ -17,11 +17,11 @@ export {
   BtnDelete,
   BtnReset,
   InputText,
-  InputTest,
   InputNumber,
   InputEmail,
   InputPassword,
   TextArea,
+  Form,
   FieldGroup,
   BtnGroup
 }
