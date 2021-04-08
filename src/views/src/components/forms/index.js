@@ -1,6 +1,8 @@
 import FormPost from './FormPost';
+import FormTest from './FormTest';
 
 import InputText from './InputText';
+import InputTest from './InputTest';
 import InputNumber from './InputNumber';
 import InputEmail from './InputEmail';
 import InputPassword from './InputPassword';
@@ -15,10 +17,12 @@ import BtnGroup from './BtnGroup';
 
 export {
   FormPost,
+  FormTest,
   BtnSubmit,
   BtnDelete,
   BtnReset,
   InputText,
+  InputTest,
   InputNumber,
   InputEmail,
   InputPassword,
