@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
-import { useLayout } from './../../layout';
+import { useLayout } from './../../hooks';
 
 const Detail = () => {
 

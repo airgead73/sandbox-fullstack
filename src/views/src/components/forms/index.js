@@ -1,6 +1,3 @@
-import FormPost from './FormPost';
-import FormTest from './FormTest';
-
 import InputText from './InputText';
 import InputTest from './InputTest';
 import InputNumber from './InputNumber';
@@ -16,8 +13,6 @@ import FieldGroup from './FieldGroup';
 import BtnGroup from './BtnGroup';
 
 export {
-  FormPost,
-  FormTest,
   BtnSubmit,
   BtnDelete,
   BtnReset,

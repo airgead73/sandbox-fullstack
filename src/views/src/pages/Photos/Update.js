@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLayout } from './../../layout';
+import { useLayout } from './../../hooks';
 const Update = () => {
   useLayout('update');
   return ( 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import { routesProjects } from './../../routes';
-import { useLayout } from './../../layout';
+import { useLayout } from './../../hooks';
 
 const Landing = () => {
   const { path } = useRouteMatch();
