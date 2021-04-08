@@ -1,4 +1,4 @@
-const { cloudinary } = require('../../../config/env.dev');
+const { cloudinary } = require('./../../../config/cloudinary');
 const fs = require('fs');
 
 const uploadCloud = async function(req, res, next) {

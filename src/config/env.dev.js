@@ -7,7 +7,6 @@ const cloudinaryName = process.env.CLOUDINARY_NAME;
 const cloudinaryKey = process.env.CLOUDINARY_API_KEY;
 const cloudinarySecret = process.env.CLOUDINARY_API_SECRET;
 const cloudinaryUrl = process.env.CLOUDINARY_URL;
-const { cloudinary } = require('./cloudinary');
 const connectDB = require('./db');
 const csp = require('./csp');
 
@@ -47,7 +46,6 @@ module.exports = {
   cloudinarySecret,
   cloudinaryUrl,
   cloudinaryKey,
-  cloudinary,
   connectDB,
   csp,
   domain,  
