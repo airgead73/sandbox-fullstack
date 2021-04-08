@@ -7,7 +7,7 @@ import Footer from './footer';
 import { LayoutContext, LayoutProvider } from './context';
 import { useLayout } from './useLayout';
 
-const Layout = (props) => {
+const Layout = () => {
   const layout = React.useContext(LayoutContext);
   const { currentLayout } = layout;
   return ( 
