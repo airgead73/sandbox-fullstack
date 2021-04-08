@@ -1,5 +1,6 @@
 const asyncHandler = require('./../middleware/handleAsync');
 const Photo = require('./../../models/Photo');
+const { cloudinary } = require('./../../config/cloudinary');
 
 /**
  * @route   POST /
@@ -9,17 +10,22 @@ const Photo = require('./../../models/Photo');
 
 exports.create = asyncHandler(async function(req, res, next) {
 
-  const photo = new Photo(res.imageData);
+    const fileStr = req.body.data;
+    const uploadedResponse = await cloudinary.uploader.upload(fileStr);
+    console.log(uploadedResponse);
+    res.json({msg: 'fill uploaded'})
 
-  await photo.save();
+  // const photo = new Photo(res.imageData);
 
-  return res
-    .status(200)
-    .json({
-      success: true,
-      msg: 'Photo was added',
-      photo
-    })
+  // await photo.save();
+
+  // return res
+  //   .status(200)
+  //   .json({
+  //     success: true,
+  //     msg: 'Photo was added',
+  //     photo
+  //   });
 
 });
 

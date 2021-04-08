@@ -19,11 +19,7 @@ const handleData = require('./../middleware/handleImages/handleData');
 photosRouter
   .route('/')
   .get(handleQuery(Photo), read_all)
-  .post(
-    handleUpload,
-    uploadCloud,
-    handleData,
-    create);
+  .post(create);
 
 module.exports = {
   photosRouter,
