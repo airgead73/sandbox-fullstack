@@ -4,10 +4,10 @@ import Nav from './nav';
 import Sidebar from './sidebar';
 import Main from './main';
 import Footer from './footer';
-import { LayoutContext, LayoutProvider } from './context';
-import { useLayout } from './useLayout';
+import { LayoutContext, LayoutProvider } from '../contexts/layout';
+import { useLayout } from '../hooks/useLayout';
 
-const Layout = () => {
+const Layout = (props) => {
   const layout = React.useContext(LayoutContext);
   const { currentLayout } = layout;
   return ( 

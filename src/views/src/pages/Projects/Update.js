@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useLayout } from './../../layout';
-import useFetch from './../../fetch/useFetch';
+import useFetch from '../../hooks/useFetch';
 import {   
   FormPost, 
   FieldGroup,
