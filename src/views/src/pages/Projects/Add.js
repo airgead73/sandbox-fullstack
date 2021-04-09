@@ -1,15 +1,12 @@
 import React, { useEffect, useContext } from 'react';
 import { Form, InputText, TextArea, BtnSubmit, BtnReset, BtnGroup, FieldGroup } from '../../components/forms';
-import { LayoutContext } from './../../contexts';
+// import { LayoutContext } from './../../contexts';
 
 const Add = () => {
-  const { changeLayout } = useContext(LayoutContext);
+  // const { changeLayout } = useContext(LayoutContext);
+  // changeLayout('add');
 
-  useEffect(() => {
-
-    changeLayout('add');
-
-  },[]);
+  
 
  return ( 
     
