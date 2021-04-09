@@ -1,5 +1,5 @@
 const cloudinary = require('cloudinary').v2;
-const { cloudinaryKey, cloudinarySecret, cloudinaryName } = require('./env.dev');
+const { cloudinaryKey, cloudinarySecret, cloudinaryName } = require('./constants');
 
 cloudinary.config({
   cloud_name: cloudinaryName,

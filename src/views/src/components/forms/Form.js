@@ -27,11 +27,6 @@ const FormPost = (props) => {
     // compile field values
     fields.forEach((field) => {
       console.log(field.type);
-      // if(field.type === "file") {
-      //   collectedFields[field.name] = field.getAttribute("previewsrc");
-      // } else {
-      //   collectedFields[field.name] = field.value;
-      // }
       if(field.type === "file") {
         collectedFields.data_url = field.getAttribute("previewsrc");
         collectedFields.filename = field.getAttribute("filename");
@@ -44,26 +39,26 @@ const FormPost = (props) => {
 
     console.log(collectedFields)
 
-    // try {
+    try {
 
-    //   const token = await getAccessTokenSilently();
-    //   const request = new Request(serverUrl, {
-    //     method: method,
-    //     headers: {
-    //       'Authorization': `Bearer ${token}`,
-    //       'Accept': 'application/json',
-    //       'Content-Type': "application/json"          
-    //     },
-    //     body: JSON.stringify(collectedFields)
-    //   });
+      const token = await getAccessTokenSilently();
+      const request = new Request(serverUrl, {
+        method: method,
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Accept': 'application/json',
+          'Content-Type': "application/json"          
+        },
+        body: JSON.stringify(collectedFields)
+      });
 
-    //   const response = await fetch(request);
-    //   const responseData = await response.json();
-    //   console.log(responseData);
+      const response = await fetch(request);
+      const responseData = await response.json();
+      console.log(responseData);
 
-    // } catch(err) {
-    //   console.error(err);
-    // }
+    } catch(err) {
+      console.error(err);
+    }
 
   }
 

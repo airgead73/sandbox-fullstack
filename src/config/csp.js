@@ -33,4 +33,4 @@ const csp = {
   }
 }
 
-module.exports = csp;
+module.exports = {csp};

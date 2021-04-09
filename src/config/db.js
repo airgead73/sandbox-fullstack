@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const dbUri = process.env.DB_URI;
+const { dbUri } = require('./constants');
 
 const connectDB = async () => {
   try {
@@ -20,4 +20,4 @@ const connectDB = async () => {
   }
 }
 
-module.exports = connectDB;
+module.exports = {connectDB};
