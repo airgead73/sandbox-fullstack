@@ -9,6 +9,12 @@ const TextArea = (props) => {
   const [fieldStatus, setFieldStatus] = useState('initial');
   const [fieldMsg, setFieldMsg] = useState(null);
 
+  const handleFieldChange = (e) => {
+    setFieldValue(e.target.value);
+    setFieldStatus('submitted');
+    setFieldMsg('message');
+  }
+
   useEffect(() => {
 
     if(formStatus === 'success') {
@@ -30,7 +36,7 @@ const TextArea = (props) => {
         id={title}
         className="field__content field--textarea"
         value={fieldValue}
-        onChange={(e) => setFieldValue(e.target.value)}
+        onChange={(e) => handleFieldChange(e)}
       ></textarea>
       {fieldMsg && (<span className="field__msg">{fieldMsg}</span>)}
     </label>

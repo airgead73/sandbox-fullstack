@@ -10,7 +10,9 @@ const InputEmail = (props) => {
   const [fieldMsg, setFieldMsg] = useState(null);
 
   const handleFieldChange = (e) => {
-    setFieldValue(e.target.value)
+    setFieldValue(e.target.value);
+    setFieldStatus('submitted');
+    setFieldMsg('message');
   }
 
   useEffect(() => {
@@ -35,7 +37,7 @@ const InputEmail = (props) => {
         id={title}
         className="field__content field--email"
         value={fieldValue}
-        onChange={handleFieldChange}
+        onChange={(e) => handleFieldChange(e)}
       />
       {fieldMsg && (<span className="field__msg">{fieldMsg}</span>)}
     </label>

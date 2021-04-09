@@ -9,6 +9,12 @@ const InputNumber = (props) => {
   const [fieldStatus, setFieldStatus] = useState('initial');
   const [fieldMsg, setFieldMsg] = useState(null);
 
+  const handleFieldChange = (e) => {
+    setFieldValue(e.target.value);
+    setFieldStatus('submitted');
+    setFieldMsg('message');
+  }
+
   useEffect(() => {
 
     if(formStatus === 'success') {
@@ -30,7 +36,7 @@ const InputNumber = (props) => {
         name={title}
         id={title}
         value={fieldValue}
-        onChange={(e) => setFieldValue(e.target.value)}
+        onChange={(e) => handleFieldChange(e)}
       />
       {fieldMsg && (<span className="field__msg">{fieldMsg}</span>)}
     </label>

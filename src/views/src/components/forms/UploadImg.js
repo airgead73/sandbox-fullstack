@@ -51,7 +51,7 @@ const UploadImg = (props) => {
         onChange={handleFileChange}
       />
       {previewSrc && (
-        <img src={previewSrc} alt="chosen image" style={{height: '300px'}}/>
+        <img src={previewSrc} alt="chosen file" style={{height: '300px'}}/>
       )}
     </label>
    );
