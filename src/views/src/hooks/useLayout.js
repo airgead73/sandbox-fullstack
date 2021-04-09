@@ -7,7 +7,7 @@ const useLayout = (newLayout) => {
 
   useEffect(() => {
     changeLayout(newLayout);
-  },[newLayout]);
+  },[newLayout,changeLayout]);
 
 }
 

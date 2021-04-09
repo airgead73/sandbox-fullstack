@@ -4,7 +4,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 
 const FormPost = (props) => {
-  const { changeFormStatus, serverStem } = useContext(FormContext);
+  const { serverStem } = useContext(FormContext);
   const { getAccessTokenSilently } = useAuth0();
   const {
     action, 
@@ -37,7 +37,7 @@ const FormPost = (props) => {
       
     });
 
-    console.log(collectedFields)
+    console.log(collectedFields);
 
     try {
 

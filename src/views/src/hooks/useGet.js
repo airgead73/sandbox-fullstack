@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { serverStem } from '../config';
 
@@ -10,12 +10,13 @@ const useGet = (endpoint) => {
 
   const serverUrl = serverStem + endpoint;
 
-  const callApi = async () => {
+  const callApi = useCallback( async function(getToken, url) {
+
     try {
 
-      const token = await getAccessTokenSilently();
+      const token = await getToken();
 
-      const response = await fetch(serverUrl, {
+      const response = await fetch(url, {
         headers: {
           Authorization: `Bearer ${token}`
         }        
@@ -39,13 +40,13 @@ const useGet = (endpoint) => {
       setError(err.message);
       setIsLoading(false);
     }
-  }
+  },[]);
 
   useEffect(() => {
 
-    callApi();
+    callApi(getAccessTokenSilently, serverUrl);
 
-  },[endpoint]);  
+  },[endpoint,getAccessTokenSilently,serverUrl, callApi]);  
 
   return { data, isLoading, error }
 
