@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { FormContext } from './../../contexts';
+import { useAuth0 } from '@auth0/auth0-react';
 
 
 const FormPost = (props) => {
-  const { changeFormStatus } = useContext(FormContext);
+  const { changeFormStatus, serverStem } = useContext(FormContext);
+  const { getAccessTokenSilently } = useAuth0();
   const {
     action, 
     children,
@@ -13,10 +15,56 @@ const FormPost = (props) => {
     title
   } = props;
 
+  const serverUrl = `${serverStem}${action}`;
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    changeFormStatus('submitted');
+    const form = e.target;
+    const fields = Array.from(form.querySelectorAll('.field__content'));
+    const collectedFields = {};
+
+    // compile field values
+    fields.forEach((field) => {
+      console.log(field.type);
+      // if(field.type === "file") {
+      //   collectedFields[field.name] = field.getAttribute("previewsrc");
+      // } else {
+      //   collectedFields[field.name] = field.value;
+      // }
+      if(field.type === "file") {
+        collectedFields.data_url = field.getAttribute("previewsrc");
+        collectedFields.filename = field.getAttribute("filename");
+      } else {
+        collectedFields[field.name] = field.value;
+      }
+      
+      
+    });
+
+    console.log(collectedFields)
+
+    // try {
+
+    //   const token = await getAccessTokenSilently();
+    //   const request = new Request(serverUrl, {
+    //     method: method,
+    //     headers: {
+    //       'Authorization': `Bearer ${token}`,
+    //       'Accept': 'application/json',
+    //       'Content-Type': "application/json"          
+    //     },
+    //     body: JSON.stringify(collectedFields)
+    //   });
+
+    //   const response = await fetch(request);
+    //   const responseData = await response.json();
+    //   console.log(responseData);
+
+    // } catch(err) {
+    //   console.error(err);
+    // }
+
   }
 
   return ( 

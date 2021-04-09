@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, InputText, BtnSubmit } from '../../components/forms';
+import { Form, InputText, BtnSubmit, UploadImg } from '../../components/forms';
 import { useLayout } from './../../hooks';
 
 const Add = () => {
@@ -15,7 +15,7 @@ const Add = () => {
       size="large"
       title="add project"
     >
-      <InputText title="project name"/>
+      <UploadImg title="add photo"/>
       <BtnSubmit title="add"/>
 
     </Form>

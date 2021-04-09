@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { BtnGroup, BtnSubmit, FieldGroup, Form, InputHidden, UploadImg } from '../../components/forms';
 import {useGet, useLayout } from '../../hooks';
 
 const Detail = () => {
@@ -44,6 +45,25 @@ const Detail = () => {
     
       </p>
       </article>}
+
+      <Form
+        title="add photo"
+        action="/api/photos"
+        method="post"
+        name="photo__add"
+        size="medium"
+      >
+        <FieldGroup>
+          <InputHidden title="project" defaultValue={id}/>
+          <UploadImg title="image"/>
+        </FieldGroup>
+        <BtnGroup>
+          <BtnSubmit title="add photo"/>
+        </BtnGroup>
+
+      </Form>
+
+
     </React.Fragment>
    );
 }

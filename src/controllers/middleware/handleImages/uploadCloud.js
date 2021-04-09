@@ -1,15 +1,23 @@
 const { cloudinary } = require('./../../../config/cloudinary');
-const fs = require('fs');
 
 const uploadCloud = async function(req, res, next) {
 
-  const cloudFile = await cloudinary.uploader.upload('uploads/temp', {
-    folder: 'projects/'
-  });
+  const fileStr = req.body.image;
+  const uploadedResponse = await cloudinary.uploader.upload(
+    fileStr,
+    {
+      folder: "test/",
+      eager: [
+        { 
+          color: "#ffffff", 
+          gravity: "south_east",
+          overlay: {font_family: "Roboto", font_size: 10, text: "%C2%A9%20Brian%20Moneypenny"}
+        }
+      ]      
+    }
+  )
 
-  fs.unlinkSync('uploads/temp');
-
-  res.cloudData = cloudFile;
+  res.cloudData = uploadedResponse;
 
   next();
 

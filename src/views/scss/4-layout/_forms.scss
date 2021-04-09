@@ -102,6 +102,9 @@
   &--textarea {
     min-height: 125px;
   }
+  &--hidden {
+    display: none;
+  }
   &__msg {
     position: absolute;
     display: none;
