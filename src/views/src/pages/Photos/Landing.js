@@ -1,11 +1,9 @@
 import React from 'react';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import { routesPhotos } from './../../routes';
-import { useLayout } from './../../hooks';
 
 const Landing = () => {
   const { path } = useRouteMatch();
-  useLayout('landing');
 
   return ( 
     <React.Fragment>

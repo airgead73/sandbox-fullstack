@@ -8,6 +8,9 @@ const LayoutProvider = ({children}) => {
   const changeLayout = (newLayout) => {
     setLayout(newLayout);
   }
+
+  console.log('layout context');
+  
   return (
     <Provider
       value={{

@@ -9,11 +9,14 @@ import "./main.css";
 ReactDOM.render(
   <Router>
     <Auth0ProviderWithHistory>
-      <LayoutProvider>
+      
         <FormProvider>
+          <LayoutProvider>
+
           <App />
+          </LayoutProvider>
         </FormProvider>
-      </LayoutProvider>      
+        
     </Auth0ProviderWithHistory>
     
   </Router>,

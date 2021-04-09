@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { BtnGroup, BtnSubmit, FieldGroup, Form, InputHidden, UploadImg } from '../../components/forms';
-import {useGet, useLayout } from '../../hooks';
+import { useGet } from '../../hooks';
 
 const Detail = () => {
 
   const { id } = useParams();
   const { data: item, isLoading, error } = useGet(`/api/projects/${id}`);
 
-  useLayout('detail');
 
   return ( 
     <React.Fragment>

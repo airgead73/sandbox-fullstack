@@ -4,11 +4,11 @@ import Nav from './nav';
 import Sidebar from './sidebar';
 import Main from './main';
 import Footer from './footer';
-import { LayoutContext } from '../contexts/layout';
+import { LayoutContext } from './../contexts';
 
 const Layout = (props) => {
-  const layout = React.useContext(LayoutContext);
-  const { currentLayout } = layout;
+  //const layout = React.useContext(LayoutContext);
+  const { currentLayout } = React.useContext(LayoutContext);
   return ( 
     <React.Fragment>
       <Header layout={currentLayout}>

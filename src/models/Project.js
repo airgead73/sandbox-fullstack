@@ -6,8 +6,9 @@ const ProjectSchema = new Schema({
   category: { type: String, required: [true, 'A category is required.'] },
   mode: { type: String, required: [true, 'A mode is required.'] },    
   material: { type: String, required: false },
-  desc: { type: String, required: false },
-  notes: { type: String, required: false }
+  description: { type: String, required: false },
+  notes: { type: String, required: false },
+  createdAt: { type: Date, default: Date.now }
 });
 
 module.exports = mongoose.model('Project', ProjectSchema);

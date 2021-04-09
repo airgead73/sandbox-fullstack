@@ -1,12 +1,17 @@
-import React from 'react';
-import { Form, InputText, BtnSubmit, UploadImg } from '../../components/forms';
-import { useLayout } from './../../hooks';
+import React, { useEffect, useContext } from 'react';
+import { Form, InputText, TextArea, BtnSubmit, BtnReset, BtnGroup, FieldGroup } from '../../components/forms';
+import { LayoutContext } from './../../contexts';
 
 const Add = () => {
+  const { changeLayout } = useContext(LayoutContext);
 
-  useLayout('add');
+  useEffect(() => {
 
-  return ( 
+    changeLayout('add');
+
+  },[]);
+
+ return ( 
     
     <Form
       method="POST"
@@ -15,8 +20,23 @@ const Add = () => {
       size="large"
       title="add project"
     >
-      <UploadImg title="add photo"/>
-      <BtnSubmit title="add"/>
+
+      <FieldGroup>
+        <InputText title="title"/>
+        <InputText title="mode"/>
+      </FieldGroup>
+      <FieldGroup>
+        <InputText title="material"/>
+        <InputText title="category"/>
+      </FieldGroup> 
+      <FieldGroup>
+        <TextArea title="description"/>
+        <TextArea title="notes"/>
+      </FieldGroup> 
+      <BtnGroup>
+        <BtnSubmit title="add"/>
+        <BtnReset title="reset"/>
+      </BtnGroup>  
 
     </Form>
 

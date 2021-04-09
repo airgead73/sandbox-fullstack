@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import { routesProjects } from './../../routes';
-import { useLayout } from './../../hooks';
+import { LayoutContext } from './../../contexts';
 
 const Landing = () => {
   const { path } = useRouteMatch();
-  useLayout('landing');
+  const { changeLayout } = useContext(LayoutContext);
+
+  useEffect(() => {
+
+    changeLayout('landing');
+
+  },[]);
+
   return (
     <React.Fragment>
       <Switch>
