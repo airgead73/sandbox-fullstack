@@ -1,9 +1,11 @@
 import React from 'react';
-import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import { Switch, Route, useRouteMatch, useHistory } from 'react-router-dom';
 import { routesProjects } from './../../routes';
 
 const Landing = () => {
   const { path } = useRouteMatch(); 
+  const { location } = useHistory();
+  console.log(location)
 
   return (
     <React.Fragment>

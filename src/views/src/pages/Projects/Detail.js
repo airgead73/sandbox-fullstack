@@ -7,7 +7,7 @@ const Detail = () => {
 
   const { id } = useParams();
   const { data: item, isLoading, error } = useGet(`/api/projects/${id}`);
-
+ 
   return ( 
     <React.Fragment>
       {isLoading && <div>loading...</div>}

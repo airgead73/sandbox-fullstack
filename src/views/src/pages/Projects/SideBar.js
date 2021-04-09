@@ -24,6 +24,7 @@ const SideBar = () => {
                 to={{
                   pathname: `${url}/${project._id}/detail`,
                   state: {
+                    view: 'detail',
                     itemId: project._id
                   }
                 }}
