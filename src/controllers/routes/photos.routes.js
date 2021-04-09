@@ -10,9 +10,6 @@ const {
 
 // middleware
 const handleQuery = require('./../middleware/handleQuery');
-const handleUpload = require('./../middleware/handleImages/handleUpload');
-const uploadCloud = require('./../middleware/handleImages/uploadCloud');
-const handleData = require('./../middleware/handleImages/handleData');
 
 // routes
 

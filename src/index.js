@@ -23,7 +23,7 @@ const {
   csp, 
   isDev, 
   limit 
-} = require("./config/env.dev");
+} = require('./config');
 
 
 
