@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 import {useGet} from './../../hooks';
 
-const SideBar = (props) => {
+const SideBar = () => {
   const { data: projects, isLoading, error } = useGet('/api/projects?sort=title');
   const { url } = useRouteMatch();
 

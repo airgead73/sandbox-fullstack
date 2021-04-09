@@ -1,10 +1,6 @@
 import React from 'react';
-import { useLayout } from './../../hooks';
-import { serverStem } from './../../config'
 
 const Add = () => {
-
-
 
   return ( 
 

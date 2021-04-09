@@ -1,7 +1,7 @@
 import useGet from './useGet';
-import { useLayout } from './useLayout';
+import { useDocument } from './useDocument';
 
 export {
   useGet,
-  useLayout
+  useDocument
 }
