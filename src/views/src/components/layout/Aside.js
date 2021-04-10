@@ -2,7 +2,7 @@ import React from 'react';
 
 const Aside = () => {
   return ( 
-    <aside>
+    <aside className="aside">
       <h3>sidebar</h3>
     </aside>
    );

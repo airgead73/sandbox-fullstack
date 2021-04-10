@@ -1,7 +1,3 @@
 .main {
-  padding: 50px;
-  padding-left: ($landingwidth + 30px);
-  &__title {
-    margin-top: 0;
-  }
+  margin-left: ($barWidth + 50px)
 }
