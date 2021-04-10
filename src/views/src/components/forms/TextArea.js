@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { FormContext } from './../../contexts';
 
-const InputText = (props) => {
-  const initialValue = props.default || '';
+const TextArea = (props) => {
   const { formStatus } = useContext(FormContext);
-  const [fieldValue, setFieldValue] = useState(initialValue);
+  const [fieldValue, setFieldValue] = useState('');
 
   useEffect(() => {
 
@@ -18,17 +17,17 @@ const InputText = (props) => {
     <label 
       htmlFor={props.title}
       >
-        <span>{props.title}</span>
-      <input
-        className="field" 
+      <span>{props.title}</span>
+      <textarea
+        className="field"
         type="text"
         name={props.title}
         id={props.title}
         value={fieldValue}
         onChange={(e) => setFieldValue(e.target.value)}
-      />
+      ></textarea>      
     </label>
    );
 }
  
-export default InputText;
+export default TextArea;

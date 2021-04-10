@@ -3,12 +3,15 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import Auth0ProviderWithHistory from "./auth/auth-provider-withhistory";
+import { FormProvider } from './contexts'
 import "./main.css";
 
 ReactDOM.render(
   <Router>
     <Auth0ProviderWithHistory>  
-          <App />    
+      <FormProvider>
+        <App />    
+      </FormProvider>
     </Auth0ProviderWithHistory>
     
   </Router>,

@@ -1,12 +1,30 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { Form, InputText, TextArea, BtnSubmit } from '../../components/forms';
+import { useGet } from './../../hooks'
 
 const Update = () => {
   const { id } = useParams();
+  const { data: project, isLoading, error } = useGet(`/api/projects/${id}`);
   return ( 
     <React.Fragment>
-      <h2>update</h2>
-      <p>{id}</p>
+      {error && <p>{error}</p>}
+      {isLoading && <p>loading...</p>}
+      {project && (
+        <Form 
+          title={`Update ${project.title}`}
+          action={`/api/projects/${project._id}`}
+          method="PUT"
+          to={`/projects/${id}/detail`}
+        >
+          <InputText title="title" default={project.title}/>
+          <InputText title="mode" default={project.mode}/>
+          <InputText title="material" default={project.material}/>
+          <InputText title="category" default={project.category}/>
+          <TextArea title="description" default={project.description}/>
+          <TextArea title="notes" default={project.notes}/>
+      </Form>       
+      )}
     </React.Fragment>
    );
 }

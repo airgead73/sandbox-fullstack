@@ -390,6 +390,7 @@ body {
 
 .main {
   margin-left: 200px;
+  padding: 50px 0;
 }
 
 .footer {
@@ -400,38 +401,28 @@ body {
   text-align: center;
 }
 
-.form {
+form {
   width: 95%;
-}
-
-.form__border {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-right: 20px;
-  padding-left: 20px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: dimgray;
-}
-
-.form__title {
-  background-color: dimgray;
-  color: #f0f0f0;
-  line-height: 2.25;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.form--narrow {
   max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.form--medium {
-  max-width: 750px;
+fieldset {
+  padding: 20px;
 }
 
-.form--large {
-  max-width: 960px;
+label {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  display: block;
+  width: 100%;
+  line-height: 2;
+  padding: 0 8px;
 }
 
 table, th, td {
@@ -445,4 +436,8 @@ table {
 
 th, td {
   padding: 8px;
+}
+
+button[type="submit"] {
+  display: block;
 }

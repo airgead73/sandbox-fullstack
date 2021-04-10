@@ -12,11 +12,14 @@ const useGet = (endpoint) => {
 
   const callApi = useCallback( async function(getToken, url) {
 
+    const abortController = new AbortController()
+
     try {
 
       const token = await getToken();
 
       const response = await fetch(url, {
+        signal: abortController.signal,
         headers: {
           Authorization: `Bearer ${token}`
         }        
@@ -40,6 +43,9 @@ const useGet = (endpoint) => {
       setError(err.message);
       setIsLoading(false);
     }
+
+    return () => abortController.abort();
+
   },[]);
 
   useEffect(() => {

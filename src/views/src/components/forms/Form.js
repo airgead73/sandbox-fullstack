@@ -1,23 +1,23 @@
 import React, { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
 import { FormContext } from './../../contexts';
+import { useHistory } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const Form = (props) => {
-  const { serverStem } = useContext(FormContext);
+  const { serverStem, changeFormStatus } = useContext(FormContext);
   const { getAccessTokenSilently } = useAuth0();
   const serverUrl = `${serverStem}${props.action}`;
   const history = useHistory();
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
-    const fields = Array.from(form.querySelectorAll('input'));
+    const fields = Array.from(form.querySelectorAll('.field'));
     const collectedFields = {};
 
     // compile field values
     fields.forEach((field) => {
-      console.log(field.type);
       if(field.type === "file") {
         collectedFields.data_url = field.getAttribute("previewsrc");
         collectedFields.filename = field.getAttribute("filename");
@@ -26,8 +26,6 @@ const Form = (props) => {
       }      
       
     });
-
-    console.log(collectedFields); 
 
     try {
 
@@ -44,16 +42,22 @@ const Form = (props) => {
 
       const response = await fetch(request);
       const responseData = await response.json();
-      console.log(responseData);
+      console.log(responseData);      
+      if(props.to) return history.push(`${props.to}`);
+      return changeFormStatus('success');
 
     } catch(err) {
       console.error(err);
     } 
+
   }
+
   return ( 
-    <form onSubmit={}>
-      <legend>{props.title}</legend>
-      {props.children}
+    <form onSubmit={(e) => handleSubmit(e)}>
+      <fieldset>
+        <legend>{props.title}</legend>
+        {props.children}
+      </fieldset>
     </form>
    );
 }
