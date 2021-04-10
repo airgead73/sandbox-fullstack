@@ -19,6 +19,7 @@ const Detail = () => {
               &nbsp;|&nbsp;
               <BtnDelete 
                 endpoint={`/api/projects/${project._id}`}
+                to="/projects"
               >
                 delete
               </BtnDelete>
