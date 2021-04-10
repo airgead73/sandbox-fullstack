@@ -4,8 +4,11 @@ import Nav from './Nav';
 import Main from './Main';
 import Aside from './Aside';
 import Footer from './Footer';
+import { useLocation } from 'react-router-dom';
 
 const Layout = ({children}) => {
+  const location = useLocation();
+  console.log(location);
   return ( 
     <React.Fragment>
 

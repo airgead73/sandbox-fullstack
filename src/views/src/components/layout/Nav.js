@@ -1,14 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
+
+const MenuLink = ({exact, to, text}) =>{
+  const match = useRouteMatch({
+    exact,
+    path: to
+  })
+  return (
+    <li className={`list__item${match ? ' active' : ''}`}>
+      <Link to={to}>{text}</Link>
+    </li>
+  )
+}
 
 const Nav = () => {
   return ( 
     <nav className="nav">
       <ul>
 
-        <li><Link to="/">home</Link></li>
-        <li><Link to="/projects">projects</Link></li>
-        <li><Link to="/photos">photos</Link></li>
+        <MenuLink exact={true} to="/" text="home"/>
+        <MenuLink exact={true} to="/projects" text="projects"/>
+        <MenuLink exact={true} to="photos" text="photos"/>
 
       </ul>
     </nav>

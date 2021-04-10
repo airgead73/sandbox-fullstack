@@ -358,9 +358,10 @@ body {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 200px;
+  width: 150px;
   background-color: dimgray;
   color: #f0f0f0;
+  font-size: .8rem;
 }
 
 .header h1, .header h2, .header h3 {
@@ -369,10 +370,26 @@ body {
 
 .header a {
   color: inherit;
+  text-decoration: none;
+}
+
+.header ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.header li {
+  line-height: 1.75;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.header li.active {
+  border-color: #f0f0f0;
 }
 
 .main {
-  margin-left: 250px;
+  margin-left: 200px;
 }
 
 .footer {
