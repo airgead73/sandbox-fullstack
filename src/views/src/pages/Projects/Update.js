@@ -1,8 +1,13 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 const Update = () => {
+  const { id } = useParams();
   return ( 
-    <h2>update project</h2>
+    <React.Fragment>
+      <h2>update</h2>
+      <p>{id}</p>
+    </React.Fragment>
    );
 }
  

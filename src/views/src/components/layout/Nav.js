@@ -20,7 +20,7 @@ const Nav = () => {
 
         <MenuLink exact={true} to="/" text="home"/>
         <MenuLink exact={true} to="/projects" text="projects"/>
-        <MenuLink exact={true} to="photos" text="photos"/>
+        <MenuLink exact={true} to="/photos" text="photos"/>
 
       </ul>
     </nav>
