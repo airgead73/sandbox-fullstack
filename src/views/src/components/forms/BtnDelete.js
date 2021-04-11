@@ -25,8 +25,10 @@ const BtnDelete = ({endpoint, to, children}) => {
       const responseData = await response.json();
       const { success } = responseData;
 
-      if(success) {
+      if(success && to) {
         history.push(`${to}`)
+      } else if (success) {
+        window.location.reload();
       } else {
         throw Error('something went wrong')
       }

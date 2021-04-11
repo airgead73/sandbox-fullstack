@@ -8,6 +8,7 @@ const Thead = ({headings}) => {
         <th 
           key={heading.id}
           width={heading.width}
+          colSpan={heading.colspan}
         >
           {heading.text}
         </th>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, useRouteMatch } from 'react-router-dom'
+import { Link, useRouteMatch } from 'react-router-dom';
+import { BtnDelete } from './../../../components/forms';
 
 const Tbody = ({items}) => {
   const { url } = useRouteMatch();
@@ -14,6 +15,11 @@ const Tbody = ({items}) => {
           <td>{item.mode}</td>
           <td>{item.material}</td>
           <td>{item.category}</td>
+          <td>
+            <BtnDelete endpoint={`/api/projects/${item._id}`}>
+              delete
+            </BtnDelete>
+          </td>
         </tr>
       ))}
     </tbody>
