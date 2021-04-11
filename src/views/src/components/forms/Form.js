@@ -27,6 +27,8 @@ const Form = (props) => {
       
     });
 
+    // fetch data
+
     try {
 
       const token = await getAccessTokenSilently();
@@ -42,7 +44,10 @@ const Form = (props) => {
 
       const response = await fetch(request);
       const responseData = await response.json();
-      console.log(responseData);      
+      console.log(responseData); 
+      
+      // handle success
+          
       if(props.to) return history.push(`${props.to}`);
       return changeFormStatus('success');
 

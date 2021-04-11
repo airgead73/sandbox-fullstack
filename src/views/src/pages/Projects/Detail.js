@@ -17,13 +17,17 @@ const Detail = () => {
             <small>
               <Link to={`/projects/${project._id}/update`}>update</Link>
               &nbsp;|&nbsp;
-              <BtnDelete 
-                endpoint={`/api/projects/${project._id}`}
-                to="/projects"
-              >
-                delete
-              </BtnDelete>
+              <Link to={`/projects/${project._id}/addphoto`}>add photo</Link>
+
             </small>
+          </p>
+          <p>
+          <BtnDelete 
+            endpoint={`/api/projects/${project._id}`}
+            to="/projects"
+          >
+            delete
+          </BtnDelete>
           </p>
           <ul>
             <li>{project.mode}</li>

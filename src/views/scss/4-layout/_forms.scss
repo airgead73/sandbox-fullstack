@@ -9,6 +9,12 @@ fieldset {
   padding: 20px;
 }
 
+legend {
+  padding: 10px 15px;
+  background-color: $primary-darkest;
+  color: $white;
+}
+
 label {
   display: block;
   width: 100%;

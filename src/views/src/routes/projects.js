@@ -1,4 +1,5 @@
 import { ProjectsAdd, ProjectsDetail, ProjectsUpdate } from './../pages/Projects';
+import { PhotosAdd } from './../pages/Photos';
 import { PnfLanding} from './../pages/PnF';
 
 const routesProjects = [
@@ -15,6 +16,10 @@ const routesProjects = [
   {
     path: '/:id/update',
     main: () => <ProjectsUpdate/>
+  },
+  {
+    path: '/:id/addphoto',
+    main: () => <PhotosAdd/>
   },
   {
     path: '/*',

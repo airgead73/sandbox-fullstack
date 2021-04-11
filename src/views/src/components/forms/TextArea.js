@@ -2,8 +2,9 @@ import React, { useContext, useEffect, useState } from 'react';
 import { FormContext } from './../../contexts';
 
 const TextArea = (props) => {
+  const initialValue = props.default || '';
   const { formStatus } = useContext(FormContext);
-  const [fieldValue, setFieldValue] = useState('');
+  const [fieldValue, setFieldValue] = useState(initialValue);
 
   useEffect(() => {
 
