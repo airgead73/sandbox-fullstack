@@ -20,8 +20,8 @@ const Add = () => {
           <InputText title="title"/>
           <InputText title="caption"/>
           <InputText title="project" default={project._id}/>          
-          <TextArea title="notes"/>
-          <InputImg title="chose photo"/>
+          <TextArea title="alt"/>
+          <InputImg title="image"/>
           <BtnSubmit title="add"/>
       </Form>       
       )}

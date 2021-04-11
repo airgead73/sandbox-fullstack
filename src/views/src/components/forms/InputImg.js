@@ -23,9 +23,6 @@ const InputImg = (props) => {
       setFileName(file.name);
     }
   }
-
-
-
   useEffect(() => {
 
     if(formStatus === 'success') {

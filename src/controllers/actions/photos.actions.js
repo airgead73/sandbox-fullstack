@@ -12,15 +12,18 @@ exports.create = asyncHandler(async function(req, res, next) {
 
     const fileStr = req.body.data_url;
     const uploadedResponse = await cloudinary.uploader.upload(fileStr, {
-      folder: `test/${req.body.image}`,
+      folder: 'test/',
       eager: [
         { 
           color: "#ffffff", 
           gravity: "south_east",
-          overlay: {font_family: "Roboto", font_size: 10, text: "%C2%A9%20Brian%20Moneypenny"}
+          overlay: {
+            font_family: "Roboto", font_size: 10, text: "%C2%A9%20Brian%20Moneypenny"
+          }
         }
       ]
     });
+
     console.log('photo response:', uploadedResponse);
     //res.json({msg: 'fill uploaded'})
 
