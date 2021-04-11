@@ -1,5 +1,6 @@
 import React from 'react';
-import { Form, InputText, TextArea, BtnSubmit } from '../../components/forms';
+import { useParams } from 'react-router-dom';
+import { Form, InputText, InputImg, TextArea, BtnSubmit } from '../../components/forms';
 import { useGet } from './../../hooks';
 
 const Add = () => {
@@ -14,13 +15,14 @@ const Add = () => {
           title={`${project.title}: add photo`}
           action="/api/photos"
           method="POST"
-          to={`/projects/${project._idid}/detail`}
+          to={`/projects/${project._id}/detail`}
         >
           <InputText title="title"/>
           <InputText title="caption"/>
           <InputText title="project" default={project._id}/>          
           <TextArea title="notes"/>
-          <BtnSubmit title="update"/>
+          <InputImg title="chose photo"/>
+          <BtnSubmit title="add"/>
       </Form>       
       )}
     </React.Fragment>
