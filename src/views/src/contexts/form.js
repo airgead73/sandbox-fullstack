@@ -10,6 +10,9 @@ const FormProvider = ({children}) => {
   const [formStatus, setFormStatus] = React.useState('initial');
   const changeFormStatus = (newStatus) => {
     setFormStatus(newStatus);
+    if(newStatus === 'success') {
+      setFormStatus('initial');
+    }
   }
   return (
     <Provider
