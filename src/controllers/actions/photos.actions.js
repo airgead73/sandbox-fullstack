@@ -1,6 +1,5 @@
 const asyncHandler = require('./../middleware/handleAsync');
 const Photo = require('./../../models/Photo');
-const { cloudinary } = require('./../../config/cloudinary');
 
 /**
  * @route   POST /
@@ -10,28 +9,11 @@ const { cloudinary } = require('./../../config/cloudinary');
 
 exports.create = asyncHandler(async function(req, res, next) {
 
-    const fileStr = req.body.data_url;
-    const uploadedResponse = await cloudinary.uploader.upload(fileStr, {
-      folder: 'test/',
-      eager: [
-        { 
-          color: "#ffffff", 
-          gravity: "south_east",
-          overlay: {
-            font_family: "Roboto", font_size: 10, text: "%C2%A9%20Brian%20Moneypenny"
-          }
-        }
-      ]
-    });
-
-    console.log('photo response:', uploadedResponse);
-    //res.json({msg: 'fill uploaded'})
-
     return res
       .status(200)
       .json({
         success: true,
-        uploadedPhoto: uploadedResponse
+        uploadedPhoto: res.cloudData
       })
 
   // const photo = new Photo(res.imageData);

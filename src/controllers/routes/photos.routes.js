@@ -10,13 +10,17 @@ const {
 
 // middleware
 const handleQuery = require('./../middleware/handleQuery');
+const {
+  uploadCloud,
+  compileData
+} = require('./../middleware/handleImages');
 
 // routes
 
 photosRouter
   .route('/')
   .get(handleQuery(Photo), read_all)
-  .post(create);
+  .post(uploadCloud, create);
 
 module.exports = {
   photosRouter,

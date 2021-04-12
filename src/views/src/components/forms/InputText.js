@@ -7,12 +7,8 @@ const InputText = (props) => {
   const [fieldValue, setFieldValue] = useState(initialValue);
 
   useEffect(() => { 
-    
-    console.log('form context');
-    console.log('---------------');
 
     if(formStatus === 'success') {
-      console.log('change to success');
       setFieldValue('');
     }
 
