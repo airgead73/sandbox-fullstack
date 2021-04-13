@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Form, InputText, InputImg, TextArea, BtnSubmit } from '../../components/forms';
 import { useGet } from './../../hooks';
@@ -16,6 +16,7 @@ const Add = () => {
           action="/api/photos"
           method="POST"
           to={`/projects/${project._id}/detail`}
+          message="Photo is loading"
         >
           <InputText title="title"/>
           <InputText title="caption"/>

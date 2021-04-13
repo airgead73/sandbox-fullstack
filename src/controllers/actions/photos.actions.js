@@ -9,24 +9,16 @@ const Photo = require('./../../models/Photo');
 
 exports.create = asyncHandler(async function(req, res, next) {
 
+    const photo = new Photo(res.imageData);
+
+    await photo.save();
+
     return res
       .status(200)
       .json({
         success: true,
-        uploadedPhoto: res.imageData
+        photo: photo
       });
-
-  // const photo = new Photo(res.imageData);
-
-  // await photo.save();
-
-  // return res
-  //   .status(200)
-  //   .json({
-  //     success: true,
-  //     msg: 'Photo was added',
-  //     photo
-  //   });
 
 });
 

@@ -5,11 +5,16 @@ const uploadCloud = async function(req, res, next) {
   try {
 
     const { mode, slug } = res.project;
+    let folder = 'btm/';    
+    if (mode) folder = `folder${mode}/`;
+    if (slug) folder = `folder${slug}/`;
+
     const fileStr = req.body.data_url;
+
     const uploadedResponse = await cloudinary.uploader.upload(
       fileStr,
       {
-        folder: `test/${mode}/${slug}/`,
+        folder: folder,
         eager: [
           { 
             color: "#ffffff", 

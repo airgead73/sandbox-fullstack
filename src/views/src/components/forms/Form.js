@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FormContext } from './../../contexts';
 import { useHistory } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
+import { LoadingOverlay} from './../loading';
 
 const Form = (props) => {
   const { serverStem, changeFormStatus } = useContext(FormContext);
@@ -44,11 +45,11 @@ const Form = (props) => {
       });
 
       const response = await fetch(request);
-      const responseData = await response.json();
-      console.log(responseData); 
+      const responseData = await response.json(); 
+      
+      console.log(responseData);
       
       // handle success
-          
       if(props.to) return history.push(`${props.to}`);
       return changeFormStatus('success');
 
