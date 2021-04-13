@@ -2,15 +2,14 @@ const { cloudinary } = require('./../../../config/cloudinary');
 
 const uploadCloud = async function(req, res, next) {
 
-  console.log(req.body);
-
   try {
 
+    const { mode, slug } = res.project;
     const fileStr = req.body.data_url;
     const uploadedResponse = await cloudinary.uploader.upload(
       fileStr,
       {
-        folder: "test/",
+        folder: `test/${mode}/${slug}/`,
         eager: [
           { 
             color: "#ffffff", 

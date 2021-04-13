@@ -1,18 +1,37 @@
 const compileData = async function(req, res, next) {
 
-  const imageData = {...req.body};
-  const { originalname } = res.uploadData;
-  const { public_id, width, height, format, bytes, secure_url } = res.cloudData;
-   
-  imageData.public_id = public_id;
-  imageData.original_file = originalname;
-  imageData.width = width;
-  imageData.height = height;
-  imageData.format = format;
-  imageData.size = bytes;
-  imageData.url = secure_url;
+  const { 
+    alt,
+    caption,
+    project, 
+    title
+  } = req.body;
 
-  res.imageData = imageData;
+  const { 
+    bytes,
+    eager,
+    format, 
+    height, 
+    public_id, 
+    secure_url: url,
+    width, 
+  } = res.cloudData;
+
+  const url_copyright = eager[0].secure_url;
+
+  res.imageData = {
+    alt,
+    bytes,
+    caption,
+    format,
+    height,
+    project,
+    public_id,
+    title,
+    url,
+    url_copyright,
+    width,
+  }
 
   next();
 

@@ -1,3 +1,6 @@
 button[type="submit"] {
   display: block;
+  &:hover {
+    cursor: pointer;
+  }
 }

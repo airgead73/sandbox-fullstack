@@ -13,8 +13,8 @@ exports.create = asyncHandler(async function(req, res, next) {
       .status(200)
       .json({
         success: true,
-        uploadedPhoto: res.cloudData
-      })
+        uploadedPhoto: res.imageData
+      });
 
   // const photo = new Photo(res.imageData);
 

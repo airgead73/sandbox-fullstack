@@ -447,3 +447,7 @@ th, td {
 button[type="submit"] {
   display: block;
 }
+
+button[type="submit"]:hover {
+  cursor: pointer;
+}
