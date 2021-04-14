@@ -7,7 +7,7 @@ const { Provider } = MessageContext;
 
 const MessageProvider = ({children}) => {
   const [message, setMessage] = useState('');
-  const [messageStatus, setMessageStatus] = useState('inactive');
+  const [messageStatus, setMessageStatus] = useState('loading');
 
   const handleMessage = ({ message, status}) => {
     setMessage(message);

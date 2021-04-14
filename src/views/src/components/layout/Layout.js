@@ -4,20 +4,22 @@ import Nav from './Nav';
 import Main from './Main';
 import Aside from './Aside';
 import Footer from './Footer';
-import { FormProvider } from '../../contexts';
+import Message from './Message';
+import { FormProvider } from './../../contexts';
 
 const Layout = ({children}) => {
   return ( 
     
   <FormProvider>
-    <Header>
-      <Nav/>
-      <Aside/>
-      <Footer/>
-    </Header>
-    <Main>
-      {children}
-     </Main>
+      <Header>
+        <Nav/>
+        <Aside/>
+        <Footer/>
+      </Header>
+      <Main>
+        <Message/>
+        {children}
+      </Main>
   </FormProvider>
 
    );
