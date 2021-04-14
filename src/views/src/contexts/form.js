@@ -1,7 +1,7 @@
 import React from 'react';
 import { serverStem } from './../config';
 
-// status: initial, success, error
+// status options: initial, success, error
 
 const FormContext = React.createContext();
 const { Provider } = FormContext;

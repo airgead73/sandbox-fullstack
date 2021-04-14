@@ -4,21 +4,22 @@ import Nav from './Nav';
 import Main from './Main';
 import Aside from './Aside';
 import Footer from './Footer';
+import { FormProvider } from '../../contexts';
 
 const Layout = ({children}) => {
   return ( 
-    <React.Fragment>
+    
+  <FormProvider>
+    <Header>
+      <Nav/>
+      <Aside/>
+      <Footer/>
+    </Header>
+    <Main>
+      {children}
+     </Main>
+  </FormProvider>
 
-      <Header>
-        <Nav/>
-        <Aside/>
-        <Footer/>
-      </Header>
-      <Main>
-        {children}
-      </Main>
-
-    </React.Fragment>
    );
 }
  
