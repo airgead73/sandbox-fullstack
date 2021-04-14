@@ -6,7 +6,7 @@ const { Provider } = FormContext;
 // message types: success, error, loading
 
 const MessageProvider = ({children}) => {
-  const [messageState, setMessageState] = useState({
+  const [messageState, setMessageState] = React.useState({
     active: false,
     type: 'initial',
     text: null

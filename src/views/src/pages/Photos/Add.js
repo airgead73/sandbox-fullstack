@@ -5,11 +5,9 @@ import { useGet } from './../../hooks';
 
 const Add = () => {
   const { id } = useParams();
-  const { data: project, isLoading, error } = useGet(`/api/projects/${id}`);  
+  const { data: project } = useGet(`/api/projects/${id}`);  
   return ( 
     <React.Fragment>
-      {error && <p>{error}</p>}
-      {isLoading && <p>loading...</p>}
       {project && (
         <Form 
           title={`${project.title}: add photo`}

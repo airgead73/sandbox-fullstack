@@ -32,11 +32,9 @@ const headings = [
 ];
 
 const Table = () => {
-  const { data: projects, count, isLoading, error } = useGet('/api/projects?sort=title');
+  const { data: projects, count } = useGet('/api/projects?sort=title');
   return ( 
     <React.Fragment>
-      {error && <p>{error}</p>}
-      {isLoading && <p>loading...</p>}
       {count > 0 && (
         <TableContainer title="project table" headings={headings}>
         <Thead headings={headings}/>
