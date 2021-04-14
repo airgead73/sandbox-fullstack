@@ -1,30 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const MessageContext = React.createContext();
-const { Provider } = FormContext;
+const { Provider } = MessageContext;
 
-// message types: success, error, loading
+// message status types: inactive, success, error, loading
 
 const MessageProvider = ({children}) => {
-  const [messageState, setMessageState] = React.useState({
-    active: false,
-    type: 'initial',
-    text: null
-  });
+  const [message, setMessage] = useState('');
+  const [messageStatus, setMessageStatus] = useState('inactive');
 
-  const changeMessageState = ({active, type, text}) => {
-    setMessageState({
-      active,
-      type,
-      text
-    });
+  const handleMessage = ({ message, status}) => {
+    setMessage(message);
+    setMessageStatus(status);
   }
 
   return (
     <Provider
       value={{
-        messageState,
-        changeMessageState 
+        message,
+        messageStatus,
+        handleMessage        
       }}
     >
       {children}

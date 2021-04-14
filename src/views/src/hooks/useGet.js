@@ -4,9 +4,6 @@ import { serverStem } from '../config';
 
 const useGet = (endpoint) => {
   const [data, setData] = useState(null);
-  const [count, setCount] = useState(0);
-  const [error, setError] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
   const { getAccessTokenSilently } = useAuth0();  
 
   const serverUrl = serverStem + endpoint;
@@ -29,7 +26,6 @@ const useGet = (endpoint) => {
       const responseData = await response.json();      
 
       const { success, message, results } = responseData;
-      const resultsCount = results.length;
 
       if(!success) {
         throw Error(message);
@@ -38,13 +34,9 @@ const useGet = (endpoint) => {
       }
 
       setData(results);
-      setCount(resultsCount);
-      setIsLoading(false);
-      setError(null);
 
     } catch(err) {
-      setError(err.message);
-      setIsLoading(false);
+      console.error(err);
     }
 
     return () => abortController.abort();
@@ -57,7 +49,7 @@ const useGet = (endpoint) => {
 
   },[endpoint,getAccessTokenSilently,serverUrl, callApi]);  
 
-  return { data, count, isLoading, error }
+  return { data }
 
 }
 
