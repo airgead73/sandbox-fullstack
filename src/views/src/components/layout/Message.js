@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { MessageContext } from './../../contexts';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Error = () => {
   return (
@@ -24,15 +25,17 @@ const Loading = () => {
 
 const Message = () => {
   const { messageStatus } = useContext(MessageContext);
-  const isSuccess = messageStatus === 'success';
-  const isError = messageStatus === 'error';
-  const isLoading = messageStatus === 'loading';
+  const { isLoading } = useAuth0();
+
+  const success = messageStatus === 'success';
+  const error = messageStatus === 'error';
+  const loading = messageStatus === 'loading' || isLoading;
   return ( 
-    
+
     <React.Fragment>
-      { isSuccess && <Success/> }
-      { isError && <Error/> }
-      { isLoading && <Loading/> }
+      { success && <Success/> }
+      { error && <Error/> }
+      { loading && <Loading/> }
     </React.Fragment>
       
    );

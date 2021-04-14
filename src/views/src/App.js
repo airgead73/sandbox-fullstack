@@ -3,15 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 import { Layout } from './components/layout';
 import { routesMain as routes } from './routes';
 
-import { useAuth0 } from '@auth0/auth0-react';
 
 function App() { 
-
-  const { isLoading } = useAuth0();
-
-  if(isLoading) {
-    return <div>loading...</div>
-  }
 
   return (    
 
