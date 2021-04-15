@@ -32,16 +32,15 @@ const headings = [
 ];
 
 const Table = () => {
-  const { data: projects, count } = useGet('/api/projects?sort=title');
+  const { data: projects } = useGet('/api/projects?sort=title');
   return ( 
     <React.Fragment>
-      {count > 0 && (
+      {projects && (
         <TableContainer title="project table" headings={headings}>
         <Thead headings={headings}/>
         <Tbody items={projects}/>
         </TableContainer>
         )}
-      {count === 0 && <p>no projects found</p>}
     </React.Fragment>
    );
 }

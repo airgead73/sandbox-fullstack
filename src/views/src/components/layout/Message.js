@@ -19,16 +19,17 @@ const Success = () => {
 
 }
 
-const Loading = () => {
+const Loading = ({message}) => {
+  const loadingMessage = message || 'loading...'
   return (
     <section className="message message--loading">
-      <p className="message__text">loading message</p>
+      <p className="message__text">{loadingMessage}</p>
     </section>  )
 
 }
 
 const Message = () => {
-  const { messageStatus } = useContext(MessageContext);
+  const { message, messageStatus } = useContext(MessageContext);
   const { isLoading } = useAuth0();
 
   const success = messageStatus === 'success';
@@ -39,7 +40,7 @@ const Message = () => {
     <React.Fragment>
       { success && <Success/> }
       { error && <Error/> }
-      { loading && <Loading/> }
+      { loading && <Loading message={message}/> }
     </React.Fragment>
       
    );
