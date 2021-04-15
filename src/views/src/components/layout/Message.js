@@ -4,22 +4,26 @@ import { useAuth0 } from '@auth0/auth0-react';
 
 const Error = () => {
   return (
-    <p className="message message--error">error message</p>
+    <section className="message message--error">
+      <p className="message__text">error message</p>
+    </section>
   )
 
 }
 
 const Success = () => {
   return (
-    <p className="message message--success">success message</p>
-  )
+    <section className="message message--success">
+      <p className="message__text">success message</p>
+    </section>  )
 
 }
 
 const Loading = () => {
   return (
-    <p className="message message--loading">loading message</p>
-  )
+    <section className="message message--loading">
+      <p className="message__text">loading message</p>
+    </section>  )
 
 }
 

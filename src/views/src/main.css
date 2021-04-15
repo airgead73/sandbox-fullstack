@@ -451,3 +451,16 @@ button[type="submit"] {
 button[type="submit"]:hover {
   cursor: pointer;
 }
+
+.message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #f0f0f0;
+  text-align: center;
+}
+
+.message--loading {
+  background-color: blue;
+}
